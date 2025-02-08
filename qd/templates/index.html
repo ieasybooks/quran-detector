@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quran Matcher</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Quran Matcher</h1>
+  <p>Enter text below and choose an action (Annotate or Match):</p>
+  <form method="post" action="/web/annotate">
+    <textarea name="text" rows="10" cols="60" placeholder="Enter text here..."></textarea><br>
+    <button type="submit" name="action" value="annotate">Annotate</button>
+    <button type="submit" name="action" value="match">Match</button>
+  </form>
+  {% if result %}
+    <h2>Result:</h2>
+    <pre>{{ result }}</pre>
+  {% endif %}
+</body>
+</html>
