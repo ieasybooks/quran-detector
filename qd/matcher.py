@@ -1,33 +1,49 @@
 # quran_matcher/matcher.py
-from utils import pad_symbols, normalize_term, get_next_valid_term, GLOBAL_DELIMITERS
-from data_loader import build_sura_index, build_verse_dicts, add_ayat
-from models import MatchRecord
+from typing import Any
+
 import Levenshtein
+from data_loader import add_ayat, build_sura_index, build_verse_dicts
+from models import MatchRecord, Term
+from utils import GLOBAL_DELIMITERS, get_next_valid_term, normalize_term, pad_symbols
 
 DEBUG = False
+
 
 class QuranMatcherAnnotator:
     """
     Main class for matching and annotating Quran verses in a given text.
     """
-    def __init__(self, index_file: str = 'dfiles/quran-index.xml', 
-                 ayat_file: str = 'dfiles/quran-simple.txt', 
-                 stops_file: str = 'dfiles/nonTerminals.txt'):
+
+    def __init__(
+        self,
+        index_file: str = "dfiles/quran-index.xml",
+        ayat_file: str = "dfiles/quran-simple.txt",
+        stops_file: str = "dfiles/nonTerminals.txt",
+    ):
         suras = build_sura_index(index_file)
-        self.all_nodes = {}  # Trie structure for verse matching
+        self.all_nodes: dict[str, Term] = {}  # Trie structure for verse matching
         self.q_orig = build_verse_dicts(suras)
         self.q_norm = build_verse_dicts(suras)
         self.stops = self._load_stops(stops_file)
-        self.ambig = set()
+        self.ambig: set[str] = set()
         self.min_length = 3  # Minimum acceptable match length
-        add_ayat(ayat_file, suras, self.all_nodes, self.q_orig, self.q_norm, self.ambig, self.min_length, self.stops)
-        self.besm = 'بسم الله الرحمن الرحيم'
-        self.stop_verses = [self.besm, 'الله ونعم الوكيل', 'الحمد لله']
+        add_ayat(
+            ayat_file,
+            suras,
+            self.all_nodes,
+            self.q_orig,
+            self.q_norm,
+            self.ambig,
+            self.min_length,
+            self.stops,
+        )
+        self.besm = "بسم الله الرحمن الرحيم"
+        self.stop_verses = [self.besm, "الله ونعم الوكيل", "الحمد لله"]
         print("Done loading...")
 
     def _load_stops(self, filename: str) -> set:
         stops = set()
-        with open(filename, 'r', encoding='utf-8') as f:
+        with open(filename, "r", encoding="utf-8") as f:
             for line in f:
                 word = line.strip()
                 word = normalize_term(word)
@@ -55,7 +71,17 @@ class QuranMatcherAnnotator:
                 return key
         return None
 
-    def update_results(self, verse_obj, mem_aya: list, mem_vs: list, mem: list, results: dict, errors, current_match: str, end_idx: int):
+    def update_results(
+        self,
+        verse_obj,
+        mem_aya: list[str],
+        mem_vs: list[int],
+        mem: list[str],
+        results: dict[str, list[MatchRecord]],
+        errors,
+        current_match: str,
+        end_idx: int,
+    ):
         idx = mem_aya.index(verse_obj.name)
         prev = int(verse_obj.number) - 1
         if prev == mem_vs[idx]:
@@ -75,7 +101,7 @@ class QuranMatcherAnnotator:
                 active.errors.append(errors)
                 for i, item in enumerate(mem):
                     if i != idx:
-                        parts = item.split(':')
+                        parts = item.split(":")
                         n_to_delete = parts[0]
                         idx_to_delete = parts[1]
                         if n_to_delete in results:
@@ -95,7 +121,14 @@ class QuranMatcherAnnotator:
             mem.pop(idx)
             return True
 
-    def match_detect_missing_verse(self, terms: list, current: dict, start_idx: int, delimiters: str, find_error: bool):
+    def match_detect_missing_verse(
+        self,
+        terms: list,
+        current: dict,
+        start_idx: int,
+        delimiters: str,
+        find_error: bool,
+    ):
         errors = []
         final_result = set()
         result_str_final = ""
@@ -128,13 +161,18 @@ class QuranMatcherAnnotator:
                     temp_current = current[missing].children
                     final_result = temp_current[t_norm].verses
                     errors.append((t_norm, missing + " " + t_norm, wd_counter))
-                    if len(r_str.split()) > self.min_length and (temp_current[t_norm].terminal or temp_current[t_norm].abs_terminal):
+                    if len(r_str.split()) > self.min_length and (
+                        temp_current[t_norm].terminal
+                        or temp_current[t_norm].abs_terminal
+                    ):
                         result_str_final = r_str
                         errors_final = errors
                         end_idx = wd_counter + 1
                     current = temp_current[t_norm].children
                 else:
-                    valid, next_term, next_index = get_next_valid_term(terms, delimiters, wd_counter+1)
+                    valid, next_term, next_index = get_next_valid_term(
+                        terms, delimiters, wd_counter + 1
+                    )
                     if not valid:
                         return final_result, result_str_final.strip(), errors, end_idx
                     valid_child = self.find_in_children(next_term, current)
@@ -147,7 +185,14 @@ class QuranMatcherAnnotator:
                         return final_result, result_str_final.strip(), errors, end_idx
         return final_result, result_str_final.strip(), errors, end_idx
 
-    def match_single_verse(self, terms: list, current: dict, start_idx: int, delimiters: str, find_error: bool):
+    def match_single_verse(
+        self,
+        terms: list,
+        current: dict,
+        start_idx: int,
+        delimiters: str,
+        find_error: bool,
+    ):
         errors = []
         result_str_final = ""
         final_result = set()
@@ -178,7 +223,14 @@ class QuranMatcherAnnotator:
                 return final_result, result_str_final.strip(), errors, end_idx
         return final_result, result_str_final.strip(), errors, end_idx
 
-    def match_long_verse(self, terms: list, current: dict, start_idx: int, delimiters: str, find_error: bool):
+    def match_long_verse(
+        self,
+        terms: list,
+        current: dict,
+        start_idx: int,
+        delimiters: str,
+        find_error: bool,
+    ):
         # Handles possible missing or extra characters at the beginning of a verse.
         first_term = terms[start_idx]
         normalized_first = normalize_term(first_term, delimiters)
@@ -187,21 +239,36 @@ class QuranMatcherAnnotator:
         if normalized_first.startswith("و") and normalized_first[1:] in current:
             found = True
         if len(terms[start_idx:]) > 0 and alternative not in current and not found:
-            return self.match_single_verse(terms, current, start_idx, delimiters, find_error)
-        r1, s1, err1, end1 = self.match_single_verse(terms, current, start_idx, delimiters, find_error)
+            return self.match_single_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
+        r1, s1, err1, end1 = self.match_single_verse(
+            terms, current, start_idx, delimiters, find_error
+        )
         if not found:
             terms[start_idx] = alternative
-            r2, s2, err2, end2 = self.match_single_verse(terms, current, start_idx, delimiters, find_error)
+            r2, s2, err2, end2 = self.match_single_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
             err2.append((normalized_first, alternative, start_idx))
             terms[start_idx] = first_term
         else:
             terms[start_idx] = normalized_first[1:]
-            r2, s2, err2, end2 = self.match_single_verse(terms, current, start_idx, delimiters, find_error)
+            r2, s2, err2, end2 = self.match_single_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
             err2.append((normalized_first, normalized_first[1:], start_idx))
             terms[start_idx] = first_term
         return (r2, s2, err2, end2) if len(s2) > len(s1) else (r1, s1, err1, end1)
 
-    def match_long_verse_detect_missing(self, terms: list, current: dict, start_idx: int, delimiters: str, find_error: bool):
+    def match_long_verse_detect_missing(
+        self,
+        terms: list,
+        current: dict,
+        start_idx: int,
+        delimiters: str,
+        find_error: bool,
+    ):
         first_term = terms[start_idx]
         normalized_first = normalize_term(first_term, delimiters)
         alternative = "و" + normalized_first
@@ -209,23 +276,35 @@ class QuranMatcherAnnotator:
         if normalized_first.startswith("و") and normalized_first[1:] in current:
             found = True
         if DEBUG:
-            print('Found:', found)
+            print("Found:", found)
         if len(terms[start_idx:]) > 0 and alternative not in current and not found:
-            return self.match_detect_missing_verse(terms, current, start_idx, delimiters, find_error)
-        r1, s1, err1, end1 = self.match_detect_missing_verse(terms, current, start_idx, delimiters, find_error)
+            return self.match_detect_missing_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
+        r1, s1, err1, end1 = self.match_detect_missing_verse(
+            terms, current, start_idx, delimiters, find_error
+        )
         if len(s1.split()) == len(terms[start_idx:]):
             return r1, s1, err1, end1
         if not found:
             terms[start_idx] = alternative
-            r2, s2, err2, end2 = self.match_detect_missing_verse(terms, current, start_idx, delimiters, find_error)
+            r2, s2, err2, end2 = self.match_detect_missing_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
             err2.append((normalized_first, alternative, start_idx))
             terms[start_idx] = first_term
         else:
             terms[start_idx] = normalized_first[1:]
-            r2, s2, err2, end2 = self.match_detect_missing_verse(terms, current, start_idx, delimiters, find_error)
+            r2, s2, err2, end2 = self.match_detect_missing_verse(
+                terms, current, start_idx, delimiters, find_error
+            )
             err2.append((normalized_first, normalized_first[1:], start_idx))
             terms[start_idx] = first_term
-        return (r2, s2, err2, end2) if len(s2.split()) > len(s1.split()) else (r1, s1, err1, end1)
+        return (
+            (r2, s2, err2, end2)
+            if len(s2.split()) > len(s1.split())
+            else (r1, s1, err1, end1)
+        )
 
     def locate_verse_by_name(self, name: str, verses: set):
         for verse in verses:
@@ -233,14 +312,20 @@ class QuranMatcherAnnotator:
                 return verse
         return None
 
-    def match_verses_in_text(self, text: str, current: dict, find_error: bool = True, find_missing: bool = False,
-                             delimiters: str = GLOBAL_DELIMITERS):
-        results = {}
-        mem_aya = []
-        mem_vs = []
-        mem = []
-        errors_accumulated = []
-        
+    def match_verses_in_text(
+        self,
+        text: str,
+        current: dict,
+        find_error: bool = True,
+        find_missing: bool = False,
+        delimiters: str = GLOBAL_DELIMITERS,
+    ):
+        results: dict[str, list[MatchRecord]] = {}
+        mem_aya: list[str] = []
+        mem_vs: list[int] = []
+        mem: list[str] = []
+        errors_accumulated: list[Any] = []
+
         text = pad_symbols(text)
         terms = text.split()
         i = 0
@@ -251,13 +336,24 @@ class QuranMatcherAnnotator:
             valid, term_candidate, i = get_next_valid_term(terms, delimiters, i)
             if not valid:
                 return results, errors_accumulated
-            if (term_candidate in current or 
-                ("و" + term_candidate) in current or 
-                ((term_candidate.startswith("و") and term_candidate[1:]) in current)):
+            if (
+                term_candidate in current
+                or ("و" + term_candidate) in current
+                or ((term_candidate.startswith("و") and term_candidate[1:]) in current)
+            ):
                 if find_missing:
-                    matched_result, matched_str, errs, end_idx = self.match_long_verse_detect_missing(terms, self.all_nodes, i, delimiters, find_error)
+                    (
+                        matched_result,
+                        matched_str,
+                        errs,
+                        end_idx,
+                    ) = self.match_long_verse_detect_missing(
+                        terms, self.all_nodes, i, delimiters, find_error
+                    )
                 else:
-                    matched_result, matched_str, errs, end_idx = self.match_long_verse(terms, self.all_nodes, i, delimiters, find_error)
+                    matched_result, matched_str, errs, end_idx = self.match_long_verse(
+                        terms, self.all_nodes, i, delimiters, find_error
+                    )
                 if not matched_result:
                     mem_aya.clear()
                     mem_vs.clear()
@@ -271,7 +367,16 @@ class QuranMatcherAnnotator:
                 if overlap:
                     for name in overlap:
                         verse_obj = self.locate_verse_by_name(name, matched_result)
-                        self.update_results(verse_obj, mem_aya, mem_vs, mem, results, errs, matched_str, end_idx)
+                        self.update_results(
+                            verse_obj,
+                            mem_aya,
+                            mem_vs,
+                            mem,
+                            results,
+                            errs,
+                            matched_str,
+                            end_idx,
+                        )
                         found = True
                     if found:
                         i += len(matched_str.split())
@@ -282,8 +387,15 @@ class QuranMatcherAnnotator:
                         mem_aya.append(verse_obj.name)
                         mem_vs.append(int(verse_obj.number))
                         mem.append(aya_str)
-                        record = MatchRecord(matched_str, verse_obj.name, int(verse_obj.number),
-                                               int(verse_obj.number), errs, start, end_idx)
+                        record = MatchRecord(
+                            matched_str,
+                            verse_obj.name,
+                            int(verse_obj.number),
+                            int(verse_obj.number),
+                            errs,
+                            start,
+                            end_idx,
+                        )
                         if verse_obj.name in results:
                             results[verse_obj.name].append(record)
                         else:
@@ -295,7 +407,9 @@ class QuranMatcherAnnotator:
                 i = end_idx
         return results, errors_accumulated
 
-    def is_valid_record(self, record: MatchRecord, allowed_err_pct: float = 0.25, min_match: int = 3) -> bool:
+    def is_valid_record(
+        self, record: MatchRecord, allowed_err_pct: float = 0.25, min_match: int = 3
+    ) -> bool:
         length = record.get_length()
         if length < min_match:
             return False
@@ -311,11 +425,19 @@ class QuranMatcherAnnotator:
                     return False
         return True
 
-    def annotate_text(self, text: str, find_errors: bool = True, find_missing: bool = True,
-                      allowed_err_pct: float = 0.25, min_match: int = 3,
-                      delimiters: str = GLOBAL_DELIMITERS) -> str:
+    def annotate_text(
+        self,
+        text: str,
+        find_errors: bool = True,
+        find_missing: bool = True,
+        allowed_err_pct: float = 0.25,
+        min_match: int = 3,
+        delimiters: str = GLOBAL_DELIMITERS,
+    ) -> str:
         text = pad_symbols(text)
-        results, _ = self.match_verses_in_text(text, self.all_nodes, find_errors, find_missing, delimiters)
+        results, _ = self.match_verses_in_text(
+            text, self.all_nodes, find_errors, find_missing, delimiters
+        )
         all_terms = text.split()
         replacement_index = 0
         annotated_result = ""
@@ -333,20 +455,35 @@ class QuranMatcherAnnotator:
                     replacement_records[current_loc[0]] = record
                     replacement_texts[current_loc[0]] = annotated_text
                 seen.append(current_loc)
-        
+
         sorted_indices = sorted(replacement_records)
         for idx in sorted_indices:
             record = replacement_records[idx]
-            annotated_result += " ".join(all_terms[replacement_index:record.start_in_text]) + replacement_texts[idx] + ' '
+            annotated_result += (
+                " ".join(all_terms[replacement_index : record.start_in_text])
+                + replacement_texts[idx]
+                + " "
+            )
             replacement_index = record.end_in_text
-        annotated_result = annotated_result.strip() + " " + " ".join(all_terms[replacement_index:])
+        annotated_result = (
+            annotated_result.strip() + " " + " ".join(all_terms[replacement_index:])
+        )
         return annotated_result.strip()
 
-    def match_all(self, text: str, find_errors: bool = True, find_missing: bool = True,
-                  allowed_err_pct: float = 0.25, min_match: int = 3, return_json: bool = False,
-                  delimiters: str = GLOBAL_DELIMITERS):
+    def match_all(
+        self,
+        text: str,
+        find_errors: bool = True,
+        find_missing: bool = True,
+        allowed_err_pct: float = 0.25,
+        min_match: int = 3,
+        return_json: bool = False,
+        delimiters: str = GLOBAL_DELIMITERS,
+    ):
         text = pad_symbols(text)
-        results, _ = self.match_verses_in_text(text, self.all_nodes, find_errors, find_missing, delimiters)
+        results, _ = self.match_verses_in_text(
+            text, self.all_nodes, find_errors, find_missing, delimiters
+        )
         match_records = []
         for key in results:
             for record in results[key]:
