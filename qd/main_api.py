@@ -13,7 +13,7 @@ app = FastAPI(title="Quran Matcher API with Web Interface")
 templates = Jinja2Templates(directory="templates")
 
 # Mount static files (e.g., CSS) from the "static" directory
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="qd/static"), name="static")
 
 # Initialize your matcher with the appropriate file paths
 matcher = QuranMatcherAnnotator(
