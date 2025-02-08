@@ -8,6 +8,14 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
+    "fastapi (>=0.115.8,<0.116.0)",
+    "uvicorn (>=0.34.0,<0.35.0)",
+    "jinja2 (>=3.1.5,<4.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "isort (>=6.0.0,<7.0.0)",
+    "black (>=25.1.0,<26.0.0)",
+    "pre-commit (>=4.1.0,<5.0.0)",
+    "levenshtein (>=0.26.1,<0.27.0)"
 ]
 
 
@@ -23,3 +31,8 @@ target-version = ['py37']
 [tool.isort]
 profile = "black"
 line_length = 88
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.1.0"
+black = "^25.1.0"
+isort = "^6.0.0"
