@@ -2,16 +2,17 @@
 from typing import Any
 
 import Levenshtein
-from data_loader import add_ayat, build_sura_index, build_verse_dicts
-from models import MatchRecord, Term
-from utils import GLOBAL_DELIMITERS, get_next_valid_term, normalize_term, pad_symbols
+
+from qd.data_loader import add_ayat, build_sura_index, build_verse_dicts
+from qd.models import MatchRecord, Term
+from qd.utils import GLOBAL_DELIMITERS, get_next_valid_term, normalize_term, pad_symbols
 
 DEBUG = False
 
 
 class QuranMatcherAnnotator:
     """
-    Main class for matching and annotating Quran verses in a given text.
+    Main class for matching and annotfrom matcher import QuranMatcherAnnotatorating Quran verses in a given text.
     """
 
     def __init__(

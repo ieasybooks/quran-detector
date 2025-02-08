@@ -2,8 +2,9 @@ from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from matcher import QuranMatcherAnnotator
-from schemas import AnnotateRequest, AnnotateResponse, MatchResponse
+
+from qd.matcher import QuranMatcherAnnotator
+from qd.schemas import AnnotateRequest, AnnotateResponse, MatchResponse
 
 # Initialize FastAPI application
 app = FastAPI(title="Quran Matcher API with Web Interface")

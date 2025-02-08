@@ -2,8 +2,8 @@
 import codecs
 import xml.etree.ElementTree as ET
 
-from models import Term, Verse
-from utils import GLOBAL_DELIMITERS, normalize_text, remove_tashkeel
+from qd.models import Term, Verse
+from qd.utils import GLOBAL_DELIMITERS, normalize_text, remove_tashkeel
 
 
 def build_sura_index(index_file: str) -> list:
