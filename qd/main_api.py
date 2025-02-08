@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 
 from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse
@@ -12,9 +13,8 @@ from qd.schemas import AnnotateRequest, AnnotateResponse, MatchResponse
 app = FastAPI(title="Quran Matcher API with Web Interface")
 
 # Set up Jinja2 templates (templates are stored in the "templates" directory)
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-templates_dir = os.path.join(BASE_DIR, "templates")
-templates = Jinja2Templates(directory=templates_dir)
+BASE_DIR_1: Path = Path(__file__).parent
+templates = Jinja2Templates(directory=BASE_DIR_1 / "templates")
 
 # Mount static files (e.g., CSS) from the "static" directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -74,12 +74,8 @@ async def match_api(request_data: AnnotateRequest):
 # ---------------------------------------------
 
 
-@app.get("/", response_class=HTMLResponse)
-async def read_root(request: Request):
-    """
-    Serves the main HTML page with the form.
-    The template (index.html) will display the form and any result.
-    """
+@app.get("/")
+def read_root(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request, "result": None}
     )
