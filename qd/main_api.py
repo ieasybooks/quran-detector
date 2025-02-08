@@ -12,7 +12,9 @@ from qd.schemas import AnnotateRequest, AnnotateResponse, MatchResponse
 app = FastAPI(title="Quran Matcher API with Web Interface")
 
 # Set up Jinja2 templates (templates are stored in the "templates" directory)
-templates = Jinja2Templates(directory="templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+templates_dir = os.path.join(BASE_DIR, "templates")
+templates = Jinja2Templates(directory=templates_dir)
 
 # Mount static files (e.g., CSS) from the "static" directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
