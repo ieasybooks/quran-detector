@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -13,13 +15,19 @@ app = FastAPI(title="Quran Matcher API with Web Interface")
 templates = Jinja2Templates(directory="templates")
 
 # Mount static files (e.g., CSS) from the "static" directory
-app.mount("/static", StaticFiles(directory="qd/static"), name="static")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+static_dir = os.path.join(BASE_DIR, "static")
+
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 # Initialize your matcher with the appropriate file paths
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+dfiles_dir = os.path.join(BASE_DIR, "dfiles")
+
 matcher = QuranMatcherAnnotator(
-    index_file="dfiles/quran-index.xml",
-    ayat_file="dfiles/quran-simple.txt",
-    stops_file="dfiles/nonTerminals.txt",
+    index_file=os.path.join(dfiles_dir, "quran-index.xml"),
+    ayat_file=os.path.join(dfiles_dir, "quran-simple.txt"),
+    stops_file=os.path.join(dfiles_dir, "nonTerminals.txt"),
 )
 
 # ---------------------------------------------
