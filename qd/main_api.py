@@ -16,9 +16,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # Initialize your matcher with the appropriate file paths
 matcher = QuranMatcherAnnotator(
-    index_file="../dfiles/quran-index.xml",
-    ayat_file="../dfiles/quran-simple.txt",
-    stops_file="../dfiles/nonTerminals.txt",
+    index_file="dfiles/quran-index.xml",
+    ayat_file="dfiles/quran-simple.txt",
+    stops_file="dfiles/nonTerminals.txt",
 )
 
 # ---------------------------------------------
