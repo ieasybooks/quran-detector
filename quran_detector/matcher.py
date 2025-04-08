@@ -1,11 +1,17 @@
 # quran_matcher/matcher.py
+from importlib.resources import path
 from typing import Any
 
 import Levenshtein
 
-from qd.data_loader import add_ayat, build_sura_index, build_verse_dicts
-from qd.models import MatchRecord, Term
-from qd.utils import GLOBAL_DELIMITERS, get_next_valid_term, normalize_term, pad_symbols
+from quran_detector.data_loader import add_ayat, build_sura_index, build_verse_dicts
+from quran_detector.models import MatchRecord, Term
+from quran_detector.utils import (
+    GLOBAL_DELIMITERS,
+    get_next_valid_term,
+    normalize_term,
+    pad_symbols,
+)
 
 DEBUG = False
 
@@ -17,10 +23,22 @@ class QuranMatcherAnnotator:
 
     def __init__(
         self,
-        index_file: str = "dfiles/quran-index.xml",
-        ayat_file: str = "dfiles/quran-simple.txt",
-        stops_file: str = "dfiles/nonTerminals.txt",
+        index_file: str = None,
+        ayat_file: str = None,
+        stops_file: str = None,
     ):
+        # Use importlib.resources.path to get the absolute path of each file bundled with the package.
+        if index_file is None:
+            with path("quran_detector.dfiles", "quran-index.xml") as p:
+                index_file = str(p)
+        if ayat_file is None:
+            with path("quran_detector.dfiles", "quran-simple.txt") as p:
+                ayat_file = str(p)
+        if stops_file is None:
+            with path("quran_detector.dfiles", "nonTerminals.txt") as p:
+                stops_file = str(p)
+
+        # Now load the resources using the resolved file paths.
         suras = build_sura_index(index_file)
         self.all_nodes: dict[str, Term] = {}  # Trie structure for verse matching
         self.q_orig = build_verse_dicts(suras)

@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "qd"
-version = "0.1.0"
+name = "quran_detector"
+version = "0.1.2"
 description = ""
 authors = ["Muntaser Abukhadijah <mabukhad@amazon.com>"]
 readme = "README.md"
