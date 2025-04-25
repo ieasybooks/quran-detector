@@ -1,13 +1,13 @@
 # main.py
-from matcher import QuranMatcherAnnotator
+from matcher import qMatcherAnnotater
 
 
 def main():
-    matcher = QuranMatcherAnnotator()
+    matcher = qMatcherAnnotater()
     sample_text = "RT @user: كرامة المؤمن عند الله تعالى؛ حيث سخر له الملائكة يستغفرون له ﴿الذِين يحملونَ العرشَ ومَن حَولهُ يُسبحو بِحمدِ ربهِم واذكر ربك إذا نسيت…"
 
-    annotated = matcher.annotate_text(sample_text)
-    matches = matcher.match_all(sample_text)
+    annotated = matcher.annotateTxt(sample_text)
+    matches = matcher.matchAll(sample_text)
 
     print("Annotated Text:")
     print(annotated)
