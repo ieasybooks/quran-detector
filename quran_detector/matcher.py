@@ -863,3 +863,68 @@ class qMatcherAnnotater():
                 result.append(r.getStructured(json_format=return_json))
 
         return result
+
+
+    def match_and_annotate(
+        self,
+        inText,
+        findErr=True,
+        findMissing=True,
+        allowedErrPers=0.25,
+        minMatch=3,
+        forceMatch=False,
+        return_json=False,
+        d=globalDelimeters,
+    ):
+        """
+        Single‐pass version: runs matchVersesInText once, then uses its
+        output for both annotation and match records.
+        """
+        # 1) Normalize & tokenize once
+        text = padSymbols(inText)
+        # 2) Single trie‐walk to get raw matches
+        results, errs = self.matchVersesInText(text, self.all, findErr, findMissing, d)
+
+        # 3) Build the annotated string from 'results'
+        all_terms = text.split()
+        replacement_index = 0
+        annotated_parts = []
+        seen = set()
+        replacements = {}
+        for loc, rec_list in results.items():
+            # but you need the start/end positions, so better:
+            # collect (start_in_text, record) for each record
+            for r in rec_list:
+                if not self.isValidRec(r, allowedErrPers, minMatch, forceMatch):
+                    continue
+                pos = (r.startInText, r.endInText)
+                if pos not in seen:
+                    replacements[pos[0]] = r.getOrigStr(self.qOrig, self.qNorm)
+                seen.add(pos)
+
+        # now stitch the annotated text
+        sorted_starts = sorted(replacements)
+        last = 0
+        for start in sorted_starts:
+            annotated_parts.append(" ".join(all_terms[last:start]))
+            annotated_parts.append(replacements[start])
+            last = [r.startInText for r in results.get(results.keys().__iter__().__next__(), []) if r.startInText == start][0] if False else None
+
+        annotated = ""
+        last = 0
+        for start, rep in sorted(replacements.items()):
+            # find the corresponding record to get its end
+            rec = next(r for recs in results.values() for r in recs if r.startInText == start)
+            annotated += " ".join(all_terms[last: start]) + rep + " "
+            last = rec.endInText
+        annotated += " ".join(all_terms[last:])
+
+        # 4) Build match records from the *same* results
+        match_list = []
+        for recs in results.values():
+            for r in recs:
+                if not self.isValidRec(r, allowedErrPers, minMatch, forceMatch):
+                    continue
+                match_list.append(r.getStructured(json_format=return_json))
+
+        return annotated.strip(), match_list
