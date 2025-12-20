@@ -30,6 +30,7 @@ class Engine:
     q_norm: dict[str, dict[str, str]]
     stops: set[str]
     ambig: set[str]
+    surah_rank: dict[str, int]
     min_len_build: int = 3
 
     besm: str = "بسم الله الرحمن الرحيم"
@@ -65,7 +66,12 @@ class Engine:
                     min_len=3,
                     stops=data.stops,
                 )
-        return cls(trie=trie, q_orig=data.q_orig, q_norm=data.q_norm, stops=data.stops, ambig=ambig)
+        surah_rank = {name: idx for idx, name in enumerate(data.sura_names, start=1)}
+        return cls(trie=trie, q_orig=data.q_orig, q_norm=data.q_norm, stops=data.stops, ambig=ambig, surah_rank=surah_rank)
+
+    def _surah_sort_key(self, name: str) -> int:
+        # Higher surah number first (more deterministic for ambiguous matches).
+        return self.surah_rank.get(name, 0)
 
     def _match_with_error(self, in_str: str, curr: dict[str, Node]) -> str | int:
         for t in curr:
@@ -438,8 +444,7 @@ class Engine:
                     replacement_texts[curr_loc[0]] = c_text
                 seen.append(curr_loc)
 
-        texts = [r for r in sorted(replacement_recs)]
-        for idx in texts:
+        for idx in sorted(replacement_recs):
             r = replacement_recs[idx]
             result = result + " ".join(all_terms[replacement_index : r.start_in_text]) + replacement_texts[idx] + " "
             replacement_index = r.end_in_text

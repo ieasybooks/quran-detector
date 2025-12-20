@@ -3,6 +3,9 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any
 
+from .config import GLOBAL_DELIMITERS
+from .text import normalize_term
+
 
 @dataclass
 class MatchRecord:
@@ -58,7 +61,7 @@ class MatchRecord:
     def _get_adjusted(self, start_idx: int, start_term: str, orig_tokens: list[str]) -> int:
         length = len(orig_tokens)
         while start_idx < length:
-            curr = orig_tokens[start_idx]
+            curr = normalize_term(orig_tokens[start_idx], GLOBAL_DELIMITERS)
             if (curr == start_term) or ("و" + curr == start_term) or ("و" + start_term == curr):
                 return start_idx
             start_idx += 1
