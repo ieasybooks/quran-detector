@@ -12,4 +12,3 @@ class Settings:
     allowed_error_pct: float = 0.25
     min_match: int = 3
     delimiters: str = GLOBAL_DELIMITERS
-

@@ -111,4 +111,3 @@ def get_next_valid_term(terms: list[str], delims: str, i: int) -> tuple[bool, st
             return True, normalized, i
         i += 1
     return False, "", i
-
