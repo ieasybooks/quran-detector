@@ -81,9 +81,9 @@ class Engine:
 
     def _match_detect_missing_verse(
         self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
-    ) -> tuple[set[VerseRef], str, list[tuple[str, str, int]], int]:
-        errors: list[tuple[str, str, int]] = []
-        errs: list[tuple[str, str, int]] = []
+    ) -> tuple[set[VerseRef], str, list[list], int]:
+        errors: list[list] = []
+        errs: list[list] = []
         result: set[VerseRef] = set()
         r_str = ""
         r_str_final = ""
@@ -99,7 +99,7 @@ class Engine:
             if (t not in curr) and find_err:
                 e = self._match_with_error(t, curr)
                 if e:
-                    errors.append((t, e, wd_counter))  # type: ignore[arg-type]
+                    errors.append([t, e, wd_counter])  # type: ignore[list-item]
                     t = e  # type: ignore[assignment]
             if t in curr:
                 r_str = r_str + t + " "
@@ -116,7 +116,7 @@ class Engine:
                     r_str = r_str + missing + " " + t + " "  # type: ignore[operator]
                     temp_cur = curr[missing].children  # type: ignore[index]
                     result = temp_cur[t].verses
-                    errors.append((t, missing + " " + t, wd_counter))  # type: ignore[arg-type,operator]
+                    errors.append([t, missing + " " + t, wd_counter])  # type: ignore[list-item,operator]
                     if len(r_str.split()) > self.min_len_build and (temp_cur[t].terminal or temp_cur[t].abs_terminal):
                         r_str_final = r_str
                         result_final = result
@@ -129,7 +129,7 @@ class Engine:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
                     if valid:
-                        errors.append((t, valid, wd_counter))  # type: ignore[arg-type]
+                        errors.append([t, valid, wd_counter])  # type: ignore[list-item]
                         r_str = r_str + t + " "
                         curr = curr[valid].children  # type: ignore[index]
                         end_idx = indx + 1
@@ -139,9 +139,9 @@ class Engine:
 
     def _match_single_verse(
         self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
-    ) -> tuple[set[VerseRef], str, list[tuple[str, str, int]], int]:
-        errors: list[tuple[str, str, int]] = []
-        errs: list[tuple[str, str, int]] = []
+    ) -> tuple[set[VerseRef], str, list[list], int]:
+        errors: list[list] = []
+        errs: list[list] = []
         result: set[VerseRef] = set()
         r_str = ""
         r_str_final = ""
@@ -157,7 +157,7 @@ class Engine:
             if (t not in curr) and find_err:
                 e = self._match_with_error(t, curr)
                 if e:
-                    errors.append((t, e, wd_counter))  # type: ignore[arg-type]
+                    errors.append([t, e, wd_counter])  # type: ignore[list-item]
                     t = e  # type: ignore[assignment]
             if t in curr:
                 r_str = r_str + t + " "
@@ -174,7 +174,7 @@ class Engine:
 
     def _match_long_verse(
         self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
-    ) -> tuple[set[VerseRef], str, list[tuple[str, str, int]], int]:
+    ) -> tuple[set[VerseRef], str, list[list], int]:
         if not find_err:
             return self._match_single_verse(terms, curr, start_idx, delims, find_err)
 
@@ -184,7 +184,7 @@ class Engine:
         found = False
         rf2: set[VerseRef] | int = 0
         rs2: str | int = 0
-        err2: list[tuple[str, str, int]] | int = 0
+        err2: list[list] | int = 0
         end2: int = 0
 
         if first.startswith("و") and first[1:] in curr:
@@ -196,12 +196,12 @@ class Engine:
         if not found:
             terms[start_idx] = "و" + first
             rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
-            err2.append((first, terms[start_idx], start_idx))  # type: ignore[union-attr]
+            err2.append([first, terms[start_idx], start_idx])  # type: ignore[union-attr]
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
             rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
-            err2.append((first, first[1:], start_idx))  # type: ignore[union-attr]
+            err2.append([first, first[1:], start_idx])  # type: ignore[union-attr]
             terms[start_idx] = term
 
         if len(str(rs2)) > len(rs1):
@@ -210,14 +210,14 @@ class Engine:
 
     def _match_long_verse_detect_missing(
         self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
-    ) -> tuple[set[VerseRef], str, list[tuple[str, str, int]], int]:
+    ) -> tuple[set[VerseRef], str, list[list], int]:
         term = terms[start_idx]
         first = normalize_term(term, delims)
         e = "و" + first
         found = False
         rf2: set[VerseRef] | int = 0
         rs2: str | int = 0
-        err2: list[tuple[str, str, int]] | int = 0
+        err2: list[list] | int = 0
         end2: int = 0
 
         if first.startswith("و") and first[1:] in curr:
@@ -232,12 +232,12 @@ class Engine:
         if not found:
             terms[start_idx] = "و" + first
             rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
-            err2.append((first, terms[start_idx], start_idx))  # type: ignore[union-attr]
+            err2.append([first, terms[start_idx], start_idx])  # type: ignore[union-attr]
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
             rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
-            err2.append((first, first[1:], start_idx))  # type: ignore[union-attr]
+            err2.append([first, first[1:], start_idx])  # type: ignore[union-attr]
             terms[start_idx] = term
 
         if len(str(rs2).split()) > len(rs1.split()):
@@ -257,7 +257,7 @@ class Engine:
         mem_vs: list[int],
         mem: list[str],
         result: dict[str, list[MatchRecord]],
-        er: list[tuple[str, str, int]],
+        er: list[list],
         cv: str,
         end: int,
     ) -> bool:
@@ -305,12 +305,12 @@ class Engine:
 
     def _match_verses_in_text(
         self, in_str: str, find_err: bool, find_missing: bool, delims: str
-    ) -> tuple[dict[str, list[MatchRecord]], list[tuple[str, str, int]]]:
+    ) -> tuple[dict[str, list[MatchRecord]], list[list]]:
         result: dict[str, list[MatchRecord]] = {}
         mem_aya: list[str] = []
         mem_vs: list[int] = []
         mem: list[str] = []
-        errs: list[tuple[str, str, int]] = []
+        errs: list[list] = []
 
         terms = in_str.split()
         i = 0
@@ -324,7 +324,7 @@ class Engine:
             if t in self.trie or v in self.trie or z in self.trie:
                 r: set[VerseRef] = set()
                 r_str = ""
-                er: list[tuple[str, str, int]] = []
+                er: list[list] = []
                 if find_missing:
                     r, r_str, er, end = self._match_long_verse_detect_missing(terms, self.trie, i, delims, find_err)
                 else:
@@ -439,4 +439,3 @@ class Engine:
                     continue
                 result.append(r.to_dict())
         return result
-

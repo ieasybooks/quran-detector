@@ -10,7 +10,7 @@ class MatchRecord:
     surah_name: str
     aya_start: int
     aya_end: int
-    errors: list[list[tuple[str, str, int]]]
+    errors: list[list]
     start_in_text: int
     end_in_text: int
 
@@ -128,4 +128,3 @@ class MatchRecord:
             + end_str
         )
         return out
-
