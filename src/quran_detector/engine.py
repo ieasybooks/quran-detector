@@ -340,7 +340,7 @@ class Engine:
 
                 errs = errs + er
                 curr_ayat = [x.name for x in r]
-                overlap = list(set(curr_ayat).intersection(set(mem_aya)))
+                overlap = sorted(set(curr_ayat).intersection(set(mem_aya)))
                 found = False
                 if len(overlap) > 0:
                     start = i
@@ -377,6 +377,7 @@ class Engine:
                             result[k.name].append(new_rec)
                         else:
                             result[k.name] = [new_rec]
+
                     i = i + len(r_str.split())
             else:
                 i = i + 1
