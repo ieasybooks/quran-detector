@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import logging
 from typing import Any
 
 from .config import GLOBAL_DELIMITERS
 from .text import normalize_term
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -85,8 +88,8 @@ class MatchRecord:
             n_orig = norm_verses[surah_name][verse_number]
             start_idx = self._get_start_index(in_text_tokens[0], in_text_tokens[1], n_orig)
             if start_idx < 0:
-                # preserve legacy behavior (print + fallback)
-                print("Something is very wrong (getCorrectSpan)")
+                # Preserve legacy fallback behavior but avoid noisy stdout in library usage.
+                logger.debug("getCorrectSpan alignment failed for %s:%s", surah_name, verse_number)
                 return orig
             st_str = "..." if start_idx > 0 else ""
             start_idx = start_idx + self._get_extra_cnt(orig_tokens[0:start_idx], extra_list)

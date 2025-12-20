@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from contextlib import ExitStack
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from importlib import resources
@@ -73,16 +74,17 @@ def load_quran_simple(
 
 
 def load_bundled_data() -> QuranData:
-    pkg = resources.files("quran_detector") / "data"
-    quran_index = str(pkg / "quran-index.xml")
-    quran_simple = str(pkg / "quran-simple.txt")
-    nonterminals = str(pkg / "nonTerminals.txt")
+    data_dir = resources.files("quran_detector") / "data"
+    with ExitStack() as stack:
+        quran_index = stack.enter_context(resources.as_file(data_dir / "quran-index.xml"))
+        quran_simple = stack.enter_context(resources.as_file(data_dir / "quran-simple.txt"))
+        nonterminals = stack.enter_context(resources.as_file(data_dir / "nonTerminals.txt"))
 
-    sura_names = load_sura_names(quran_index)
-    q_orig, q_norm = _build_verse_dicts(sura_names)
-    load_quran_simple(quran_simple, sura_names, q_orig, q_norm)
-    stops = load_stops(nonterminals)
-    return QuranData(sura_names=sura_names, q_orig=q_orig, q_norm=q_norm, stops=stops)
+        sura_names = load_sura_names(str(quran_index))
+        q_orig, q_norm = _build_verse_dicts(sura_names)
+        load_quran_simple(str(quran_simple), sura_names, q_orig, q_norm)
+        stops = load_stops(str(nonterminals))
+        return QuranData(sura_names=sura_names, q_orig=q_orig, q_norm=q_norm, stops=stops)
 
 
 def load_data_from_paths(quran_simple_path: str, quran_index_path: str, nonterminals_path: str) -> QuranData:
@@ -91,4 +93,3 @@ def load_data_from_paths(quran_simple_path: str, quran_index_path: str, nontermi
     load_quran_simple(quran_simple_path, sura_names, q_orig, q_norm)
     stops = load_stops(nonterminals_path)
     return QuranData(sura_names=sura_names, q_orig=q_orig, q_norm=q_norm, stops=stops)
-
