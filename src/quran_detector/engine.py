@@ -288,7 +288,9 @@ class Engine:
                     if len(recs2) > 1:
                         cnt = 0
                         for r in recs2:
-                            if str(r.aya_start) == idx_to_del:
+                            # Preserve legacy behavior: idx_to_del is a str, r.aya_start is an int,
+                            # so this comparison is effectively always False (no deletion occurs).
+                            if r.aya_start == idx_to_del:  # type: ignore[comparison-overlap]
                                 recs2.pop(cnt)
                                 break
                             cnt = +1
