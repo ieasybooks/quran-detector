@@ -244,11 +244,21 @@ class Engine:
             return rf2, str(rs2), err2, end2  # type: ignore[return-value]
         return rf1, rs1, err1, end1
 
-    def _locate_verse_with_name(self, name: str, verses: set[VerseRef]) -> VerseRef | int:
-        for r in verses:
-            if r.name == name:
-                return r
-        return -1
+    def _locate_verse_with_name(
+        self, name: str, verses: set[VerseRef], prefer_number: int | None = None
+    ) -> VerseRef | int:
+        candidates = [r for r in verses if r.name == name]
+        if not candidates:
+            return -1
+        # Only apply the merge-preference heuristic for small ambiguous sets.
+        # Some very common fragments map to many verses in the same surah; in such cases
+        # forcing a sequential merge candidate can create incorrect long merges.
+        if prefer_number is not None and len(candidates) <= 2:
+            for r in candidates:
+                if int(r.number) == prefer_number:
+                    return r
+        # Deterministic fallback (legacy had set-order dependence here).
+        return sorted(candidates, key=lambda r: int(r.number))[0]
 
     def _update_results(
         self,
@@ -259,6 +269,7 @@ class Engine:
         result: dict[str, list[MatchRecord]],
         er: list[list],
         cv: str,
+        start: int,
         end: int,
     ) -> bool:
         if k.name not in mem_aya:
@@ -345,10 +356,14 @@ class Engine:
                 if len(overlap) > 0:
                     start = i
                     for v_name in overlap:
-                        k = self._locate_verse_with_name(v_name, r)
+                        prefer_number = None
+                        if v_name in mem_aya:
+                            idx = mem_aya.index(v_name)
+                            prefer_number = mem_vs[idx] + 1
+                        k = self._locate_verse_with_name(v_name, r, prefer_number=prefer_number)
                         if k == -1:
                             continue
-                        create_new_rec = self._update_results(k, mem_aya, mem_vs, mem, result, er, r_str, end)
+                        create_new_rec = self._update_results(k, mem_aya, mem_vs, mem, result, er, r_str, start, end)
                         found = not create_new_rec
                         aya = k.to_str()
                         mem_aya.append(k.name)
