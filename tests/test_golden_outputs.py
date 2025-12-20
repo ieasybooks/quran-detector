@@ -99,6 +99,18 @@ def _unambiguous_records(golden_match_all: list[dict[str, Any]]) -> list[dict[st
     return out
 
 
+def _unambiguous_start_refs(golden_match_all: list[dict[str, Any]]) -> set[str]:
+    by_start: dict[int, list[dict[str, Any]]] = {}
+    for rec in golden_match_all:
+        by_start.setdefault(rec["startInText"], []).append(rec)
+    refs: set[str] = set()
+    for _start, group in by_start.items():
+        if len(group) != 1:
+            continue
+        refs.add(_ref_for_record(group[0]))
+    return refs
+
+
 @pytest.mark.parametrize(
     "setting_name,settings",
     [
@@ -136,11 +148,10 @@ def test_annotate_txt_against_golden(setting_name: str, settings: Settings, book
     actual = annotate(input_text, settings=settings)
 
     golden_match_all = _load_json(OUTPUTS_DIR / setting_name / f"matchAll_{book_num}.txt")
-    unambiguous = _unambiguous_records(golden_match_all)
+    expected_refs = _unambiguous_start_refs(golden_match_all)
 
     # Ensure we're actually annotating (quick sanity check).
     assert actual != input_text
 
-    for rec in unambiguous:
-        ref = _ref_for_record(rec)
+    for ref in expected_refs:
         assert ref in actual, f"Missing reference {ref} in annotated output for book {book_num} ({setting_name})"
