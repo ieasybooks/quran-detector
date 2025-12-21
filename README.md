@@ -1,216 +1,235 @@
-## quran-detector
+<h2 dir="rtl">quran-detector</h2>
 
-Detect Quranic verses and verse fragments in Arabic text (tweets, articles, books) using an implementation based on the paper:
+<p dir="rtl">
+مكتبة لاكتشاف آيات القرآن الكريم ومقاطع الآيات داخل النصوص العربية (تغريدات، مقالات، كتب) اعتمادًا على خوارزمية مبنية على الورقة البحثية التالية:
+</p>
 
-> “QDetect: An Intelligent Tool for Detecting Quranic Verses in any Text”  
-> Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
+<blockquote dir="ltr">
+  <p>
+    “QDetect: An Intelligent Tool for Detecting Quranic Verses in any Text”<br />
+    Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
+  </p>
+</blockquote>
 
-This is a modern rewrite of the legacy `Quran_Detector` project with a clean Python API, a CLI, bundled Quran resources, and golden-file regression tests.
+<p dir="rtl">
+هذا المشروع هو إعادة كتابة حديثة للمشروع القديم <code>Quran_Detector</code> مع واجهة Python واضحة، وأداة سطر أوامر (CLI)، وملفات بيانات مرفقة (نص القرآن وقوائم الكلمات)، واختبارات انحدار (golden files) لضمان ثبات السلوك.
+</p>
 
-## Installation
+<h2 dir="rtl">التثبيت</h2>
 
-### Using `uv` (recommended)
+<h3 dir="rtl">باستخدام <code>uv</code> (موصى به)</h3>
 
-In your project:
+<p dir="rtl">داخل مشروعك:</p>
 
-```bash
-uv add quran-detector
-```
+<pre dir="ltr"><code>uv add quran-detector</code></pre>
 
-For development (adds `ruff`, `mypy`, `pre-commit`):
+<p dir="rtl">للتطوير (يضيف <code>ruff</code> و <code>mypy</code> و <code>pre-commit</code>):</p>
 
-```bash
-uv add --dev "quran-detector[dev]"
-```
+<pre dir="ltr"><code>uv add --dev "quran-detector[dev]"</code></pre>
 
-### Using `pip`
+<h3 dir="rtl">باستخدام <code>pip</code></h3>
 
-```bash
-python -m pip install quran-detector
-```
+<pre dir="ltr"><code>python -m pip install quran-detector</code></pre>
 
-For development extras:
+<p dir="rtl">إضافات التطوير:</p>
 
-```bash
-python -m pip install "quran-detector[dev]"
-```
+<pre dir="ltr"><code>python -m pip install "quran-detector[dev]"</code></pre>
 
-### Repo local setup (this repository)
+<h3 dir="rtl">تهيئة المستودع محليًا (هذا المستودع)</h3>
 
-This repo includes `uv.lock`, so you can do:
+<p dir="rtl">هذا المستودع يحتوي على <code>uv.lock</code> لذلك يمكنك تشغيل:</p>
 
-```bash
-uv sync --extra dev
-```
+<pre dir="ltr"><code>uv sync --extra dev</code></pre>
 
-If you use Mise:
+<p dir="rtl">إذا كنت تستخدم Mise:</p>
 
-```bash
-mise exec python@3.12 -- uv sync --extra dev
-```
+<pre dir="ltr"><code>mise exec python@3.12 -- uv sync --extra dev</code></pre>
 
-## Quick Start
+<h2 dir="rtl">بداية سريعة</h2>
 
-### Python API
+<h3 dir="rtl">واجهة Python</h3>
 
-```python
-from quran_detector import Settings, detect, annotate
+<pre dir="ltr"><code>from quran_detector import Settings, detect, annotate
 
 text = "وَاصْبِرْ وَمَا صَبْرُكَ إِلَّا بِاللَّهِ"
 
 records = detect(text, settings=Settings())
-annotated = annotate(text, settings=Settings())
-```
+annotated = annotate(text, settings=Settings())</code></pre>
 
-### CLI
+<h3 dir="rtl">أداة سطر الأوامر (CLI)</h3>
 
-Detect (JSON output):
+<p dir="rtl">اكتشاف (خرج JSON):</p>
 
-```bash
-quran-detector detect --input input.txt > matches.json
-```
+<pre dir="ltr"><code>quran-detector detect --input input.txt &gt; matches.json</code></pre>
 
-Annotate (inserts verse references into the text output):
+<p dir="rtl">وسم/تعليق (يضيف مراجع الآيات داخل النص الناتج):</p>
 
-```bash
-quran-detector annotate --input input.txt > annotated.txt
-```
+<pre dir="ltr"><code>quran-detector annotate --input input.txt &gt; annotated.txt</code></pre>
 
-Read from stdin:
+<p dir="rtl">القراءة من stdin:</p>
 
-```bash
-cat input.txt | quran-detector detect --stdin
-```
+<pre dir="ltr"><code>cat input.txt | quran-detector detect --stdin</code></pre>
 
-## Public API
+<h2 dir="rtl">الواجهة العامة (Public API)</h2>
 
-The public API is intentionally small:
+<p dir="rtl">الواجهة العامة مقصودة لتكون صغيرة وبسيطة:</p>
 
-- `quran_detector.detect(text: str, settings: Settings = Settings()) -> list[dict]`
-- `quran_detector.annotate(text: str, settings: Settings = Settings()) -> str`
-- `quran_detector.Settings` (configuration dataclass)
+<ul dir="rtl">
+  <li><code>quran_detector.detect(text: str, settings: Settings = Settings()) -&gt; list[dict]</code></li>
+  <li><code>quran_detector.annotate(text: str, settings: Settings = Settings()) -&gt; str</code></li>
+  <li><code>quran_detector.Settings</code> (كائن إعدادات)</li>
+</ul>
 
-Internally, a singleton `Engine` is lazily initialized on first call and uses bundled Quran resources.
+<p dir="rtl">
+داخليًا، يتم إنشاء كائن <code>Engine</code> وحيد (singleton) عند أول استدعاء بشكل كسول، ويعتمد على موارد القرآن المرفقة داخل الحزمة.
+</p>
 
-## Output Format
+<h2 dir="rtl">صيغة الخرج</h2>
 
-`detect()` returns a JSON-serializable `list[dict]`, where each record includes:
+<p dir="rtl">
+الدالة <code>detect()</code> تُرجع <code>list[dict]</code> قابلة للتحويل إلى JSON، حيث يحتوي كل سجل على:
+</p>
 
-- `surah_name`: surah name (Arabic string)
-- `aya_start`, `aya_end`: verse range (inclusive)
-- `verses`: list of matched verse fragments (normalized words)
-- `errors`: list-of-lists describing per-fragment corrections
-- `startInText`, `endInText`: token indices into `text.split()` after internal symbol padding
+<ul dir="rtl">
+  <li><code>surah_name</code>: اسم السورة (نص عربي)</li>
+  <li><code>aya_start</code> و <code>aya_end</code>: نطاق الآية (شاملًا)</li>
+  <li><code>verses</code>: قائمة بمقاطع/نصوص التطابق (بعد التطبيع)</li>
+  <li><code>errors</code>: قائمة قوائم تشرح التصحيحات لكل مقطع</li>
+  <li><code>startInText</code> و <code>endInText</code>: فهارس كلمات بالنسبة لـ <code>text.split()</code> بعد تجهيز الرموز داخليًا</li>
+</ul>
 
-Notes:
+<p dir="rtl"><strong>ملاحظات:</strong></p>
 
-- Indices are **word positions**, not character offsets.
-- When a match spans multiple consecutive verses, `verses` contains multiple fragments and `aya_end > aya_start`.
+<ul dir="rtl">
+  <li>الفهارس هي <strong>مواقع كلمات</strong> وليست إزاحات حروف.</li>
+  <li>إذا كان التطابق يغطي أكثر من آية متتالية فستجد <code>aya_end &gt; aya_start</code> و <code>verses</code> تحتوي أكثر من مقطع.</li>
+ </ul>
 
-## Configuration (`Settings`)
+<h2 dir="rtl">الإعدادات (<code>Settings</code>)</h2>
 
-`Settings` controls how matching behaves:
+<p dir="rtl">كائن <code>Settings</code> يتحكم في سلوك المطابقة:</p>
 
-- `find_errors: bool = True`  
-  Enables spelling-error correction (Levenshtein distance of 1 between an input token and a trie child).
+<ul dir="rtl">
+  <li><code>find_errors: bool = True</code><br />
+  تفعيل تصحيح أخطاء الإملاء (مسافة Levenshtein تساوي 1 بين كلمة الإدخال وأحد أبناء العقدة في الـ trie).</li>
+  <li><code>find_missing: bool = True</code><br />
+  تفعيل اكتشاف الكلمات الناقصة عبر السماح بـ “تخطّي” كلمة داخل مسار الـ trie (مكلف حسابيًا؛ انظر الورقة).</li>
+  <li><code>allowed_error_pct: float = 0.25</code><br />
+  أقصى نسبة للأخطاء المسموحة مقارنة بطول التطابق (عدد الكلمات). السجلات التي تتجاوز هذا الحد يتم استبعادها.</li>
+  <li><code>min_match: int = 3</code><br />
+  الحد الأدنى لعدد الكلمات لتكوين مقطع صالح (الافتراضي في الورقة هو 3).</li>
+  <li><code>delimiters: str = GLOBAL_DELIMITERS</code><br />
+  تعبير Regex لفصل/إزالة علامات الترقيم من الكلمات قبل المطابقة.</li>
+</ul>
 
-- `find_missing: bool = True`  
-  Enables missing-word detection by allowing a “skip” into children in the trie (expensive; see paper).
+<p dir="rtl">خيارات CLI تُطابق هذه الحقول 1:1:</p>
 
-- `allowed_error_pct: float = 0.25`  
-  Maximum allowed errors as a fraction of match length (in words). Records exceeding this are filtered out.
+<pre dir="ltr"><code>quran-detector detect --stdin --no-find-errors --no-find-missing --allowed-error-pct 0.5 --min-match 5</code></pre>
 
-- `min_match: int = 3`  
-  Minimum number of words for a fragment to be considered a valid match (paper default is 3).
+<h2 dir="rtl">كيف يعمل الوسم (Annotation)</h2>
 
-- `delimiters: str = GLOBAL_DELIMITERS`  
-  Regex used to split/strip punctuation tokens before matching.
+<p dir="rtl">
+الدالة <code>annotate()</code> تُرجع نصًا يتم فيه استبدال المقاطع المطابقة بالنص الأصلي للقرآن (كما هو مخزّن في الموارد المرفقة)
+مع إضافة وسم مرجعي:
+</p>
 
-CLI flags map 1:1 to these fields:
+<pre dir="ltr"><code>"&lt;quran text&gt;"(سورة:آية[-آية])</code></pre>
 
-```bash
-quran-detector detect --stdin --no-find-errors --no-find-missing --allowed-error-pct 0.5 --min-match 5
-```
+<p dir="rtl">
+ملاحظة حول الالتباس: بعض المقاطع الشائعة جدًا قد تتطابق مع أكثر من موضع/آية. الخوارزمية القديمة (وبالتالي هذه الإعادة)
+قد تُنتج أكثر من نتيجة صحيحة في حالات معيّنة. لذلك اختبارات golden الخاصة بالوسم تتحقق من الحالات غير الملتبسة (unambiguous) فقط.
+</p>
 
-## How Annotation Works
+<h2 dir="rtl">لمحة عن الخوارزمية (QDetect)</h2>
 
-`annotate()` returns a string where matched spans are replaced by the original Quran text (as stored in the bundled resources)
-plus a reference marker:
+<p dir="rtl">
+على مستوى عالٍ، هذه طريقة مطابقة أنماط متعددة مستوحاة من Aho–Corasick، لكنها في الورقة مُنفّذة عبر “linked hash tables”،
+وفي هذا المشروع تُنفّذ ببنية trie مخصصة لاكتشاف مقاطع الآيات بكفاءة.
+</p>
 
-```
-"<quran text>"(سورة:آية[-آية])
-```
+<ol dir="rtl">
+  <li><strong>التطبيع (Normalization)</strong>
+    <ul>
+      <li>تطبيع بعض أشكال الحروف العربية (مثل: أشكال الألف → <code>ا</code>، و <code>ة</code> → <code>ه</code>، و <code>ى/ی</code> → <code>ي</code>).</li>
+      <li>إزالة التشكيل/الضبط من نصوص القرآن والمدخل لأغراض المطابقة.</li>
+    </ul>
+  </li>
+  <li><strong>فهرسة القرآن</strong>
+    <ul>
+      <li>بناء بنية trie (“linked hash tables” في الورقة) على <strong>جميع سوابق/لواحق مقاطع الآيات</strong> (بحد أدنى 3 كلمات).</li>
+      <li>تتبع حالات terminal و abs-terminal لدعم “أطول تطابق” (longest match).</li>
+    </ul>
+  </li>
+  <li><strong>المسح (Scanning)</strong>
+    <ul>
+      <li>مسح النص كلمة بكلمة ومحاولة تمديد التطابق قدر الإمكان.</li>
+      <li>اختياريًا:
+        <ul>
+          <li>تصحيح خطأ إملائي بحرف واحد.</li>
+          <li>اكتشاف كلمة مفقودة.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>الترشيح (Filtering)</strong>
+    <ul>
+      <li>تطبيق حد أدنى للطول، واستبعاد بعض العبارات/الآيات القصيرة الشائعة، وتطبيق حد نسبة الأخطاء <code>allowed_error_pct</code>.</li>
+      <li>تطبيق معيار نسبة كلمات الوقف للمقاطع القصيرة (سلوك الورقة/الإرث).</li>
+    </ul>
+  </li>
+</ol>
 
-Ambiguity note: some very common fragments can map to multiple verses. The legacy algorithm (and thus this rewrite)
-has ambiguous cases where different valid outputs exist. The golden tests intentionally validate annotation only for
-unambiguous start positions.
+<p dir="rtl">
+للتفاصيل النظرية والخوارزمية، راجع <code>paper.md</code> / <code>paper.pdf</code> في المستودع الأم الذي تم تطوير هذه الإعادة ضمنه.
+</p>
 
-## Algorithm Overview (QDetect)
+<h2 dir="rtl">البيانات / الموارد</h2>
 
-At a high level, the approach is a customized multi-pattern matching method inspired by Aho–Corasick, but implemented as:
+<p dir="rtl">الحزمة ترفق الموارد المطلوبة داخل <code>src/quran_detector/data/</code>:</p>
 
-1. **Normalization**
-   - Normalizes Arabic variants (e.g. alif variants → `ا`, `ة` → `ه`, `ى/ی` → `ي`)
-   - Removes Quran diacritics/tashkeel for matching
+<ul dir="rtl">
+  <li><code>quran-simple.txt</code> (نص القرآن)</li>
+  <li><code>quran-index.xml</code> (بيانات السور)</li>
+  <li><code>non-terminals.txt</code> (قائمة كلمات الوقف / non-terminals)</li>
+</ul>
 
-2. **Indexing Quran**
-   - Builds a trie-like structure (“linked hash tables” in the paper) over **all verse suffixes** (>= 3 words)
-   - Tracks terminals and absolute-terminals to support “longest match” behavior
+<p dir="rtl">
+يتم تحميل الموارد عبر <code>importlib.resources</code> بحيث تعمل في حزم wheels وعمليات التثبيت المضغوطة.
+</p>
 
-3. **Scanning**
-   - Scans the input word-by-word, attempting to extend matches as far as possible
-   - Optionally applies:
-     - Single-character spelling correction
-     - Missing-word detection
+<h2 dir="rtl">التطوير</h2>
 
-4. **Filtering**
-   - Applies minimum length, stop-verse filtering, and an error-rate threshold (`allowed_error_pct`)
-   - Applies a stopword-percentage heuristic for short fragments (paper/legacy behavior)
+<h3 dir="rtl">Pre-commit</h3>
 
-For details, see `paper.md` / `paper.pdf` in the parent repository this was developed in.
+<p dir="rtl">هذا المستودع يستخدم:</p>
 
-## Data / Resources
+<ul dir="rtl">
+  <li><code>ruff</code> (lint + ترتيب الاستيرادات)</li>
+  <li><code>ruff format</code> (تنسيق)</li>
+  <li><code>mypy</code> (فحص الأنواع)</li>
+</ul>
 
-The package bundles the required resources in `src/quran_detector/data/`:
+<p dir="rtl">تثبيت hooks:</p>
 
-- `quran-simple.txt` (Quran text)
-- `quran-index.xml` (surah metadata)
-- `non-terminals.txt` (stop words / non-terminal list)
+<pre dir="ltr"><code>pre-commit install</code></pre>
 
-The bundled resources are loaded via `importlib.resources`, so they work in wheels and zipped installs.
+<p dir="rtl">تشغيلها على كل الملفات:</p>
 
-## Development
+<pre dir="ltr"><code>pre-commit run --all-files</code></pre>
 
-### Pre-commit
+<h3 dir="rtl">الاختبارات</h3>
 
-This repo uses:
+<p dir="rtl">
+الاختبارات تستخدم fixtures مرفقة داخل <code>tests/fixtures/</code> (بدون الاعتماد على مجلدات خارجية).
+</p>
 
-- `ruff` (lint + import sorting)
-- `ruff format` (formatting)
-- `mypy` (type checking)
+<p dir="rtl">تشغيل الاختبارات كأوامر منفصلة:</p>
 
-Install hooks:
-
-```bash
-pre-commit install
-```
-
-Run on all files:
-
-```bash
-pre-commit run --all-files
-```
-
-### Tests
-
-Tests use **vendored fixtures** under `tests/fixtures/` (no dependency on external folders).
-
-Run tests as separate commands:
-
-```bash
-pytest -q tests/test_tweets_eval.py
+<pre dir="ltr"><code>pytest -q tests/test_tweets_eval.py
 pytest -q tests/test_golden_outputs.py -k 'match_all_against_golden'
-pytest -q tests/test_golden_outputs.py -k 'annotate_txt_against_golden'
-```
+pytest -q tests/test_golden_outputs.py -k 'annotate_txt_against_golden'</code></pre>
 
-Note: the golden suites are intentionally heavy and can take ~30–40 minutes each on a laptop.
+<p dir="rtl">
+ملاحظة: مجموعات golden ثقيلة عمدًا وقد تأخذ حوالي 30–40 دقيقة لكل مجموعة على جهاز محمول.
+</p>
+
