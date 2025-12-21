@@ -4,6 +4,8 @@ Detect Quranic verses and verse fragments in Arabic text (tweets, articles, book
 
 > “QDetect: An Intelligent Tool for Detecting Quranic Verses in any Text”  
 > Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
+>
+> Paper link: https://www.sciencedirect.com/science/article/pii/S1877050921012321
 
 This is a modern rewrite of the legacy `Quran_Detector` project with a clean Python API, a CLI, bundled Quran resources, and golden-file regression tests.
 
@@ -214,4 +216,3 @@ pytest -q tests/test_golden_outputs.py -k 'annotate_txt_against_golden'
 ```
 
 Note: the golden suites are intentionally heavy and can take ~30–40 minutes each on a laptop.
-

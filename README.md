@@ -8,6 +8,8 @@
   <p>
     “QDetect: An Intelligent Tool for Detecting Quranic Verses in any Text”<br />
     Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
+    <br />
+    Paper link: https://www.sciencedirect.com/science/article/pii/S1877050921012321
   </p>
 </blockquote>
 
@@ -232,4 +234,3 @@ pytest -q tests/test_golden_outputs.py -k 'annotate_txt_against_golden'</code></
 <p dir="rtl">
 ملاحظة: مجموعات golden ثقيلة عمدًا وقد تأخذ حوالي 30–40 دقيقة لكل مجموعة على جهاز محمول.
 </p>
-
