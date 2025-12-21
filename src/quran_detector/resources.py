@@ -50,27 +50,33 @@ def load_quran_simple(
     q_norm: dict[str, dict[str, str]],
 ) -> None:
     besm = "بسم الله الرحمن الرحيم"
+
+    def parse_line(raw_line: str, line_no: int) -> tuple[int, str, str]:
+        line = raw_line.strip()
+        parts = line.split("|")
+        if len(parts) < 3:
+            raise ValueError(f"Malformed quran-simple.txt line {line_no}: {raw_line!r}")
+        sura_index = int(parts[0]) - 1
+        verse_number = parts[1]
+        verse_text_orig = parts[2]
+        return sura_index, verse_number, verse_text_orig
+
+    def normalize_verse(verse_text_orig: str) -> str:
+        return remove_tashkeel(normalize_text(verse_text_orig))
+
+    def strip_besm(sura_index: int, verse_text_orig: str, verse_text_norm: str) -> tuple[str, str]:
+        if (sura_index != 0) and verse_text_norm.startswith(besm):
+            new_i = verse_text_norm.index(besm) + len(besm)
+            verse_text_norm = verse_text_norm[new_i:]
+            verse_text_orig = " ".join(verse_text_orig.split()[4:])
+        return verse_text_orig, verse_text_norm
+
     with open(quran_simple_path, "r", encoding="utf-8") as file:
-        line_no = 1
-        for raw_line in file:
-            line = raw_line.strip()
-            parts = line.split("|")
-            if len(parts) < 3:
-                raise ValueError(f"Malformed quran-simple.txt line {line_no}: {raw_line!r}")
-            line_no += 1
-            sura_index = int(parts[0]) - 1
+        for line_no, raw_line in enumerate(file, start=1):
+            sura_index, verse_number, verse_text_orig = parse_line(raw_line, line_no)
             sura_name = sura_names[sura_index]
-            verse_number = parts[1]
-            verse_text_orig = parts[2]
-
-            verse_text_norm = normalize_text(verse_text_orig)
-            verse_text_norm = remove_tashkeel(verse_text_norm)
-
-            if (sura_index != 0) and verse_text_norm.startswith(besm):
-                new_i = verse_text_norm.index(besm) + len(besm)
-                verse_text_norm = verse_text_norm[new_i:]
-                verse_text_orig = " ".join(verse_text_orig.split()[4:])
-
+            verse_text_norm = normalize_verse(verse_text_orig)
+            verse_text_orig, verse_text_norm = strip_besm(sura_index, verse_text_orig, verse_text_norm)
             q_orig[sura_name][verse_number] = verse_text_orig
             q_norm[sura_name][verse_number] = verse_text_norm
 

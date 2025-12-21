@@ -80,6 +80,25 @@ class Engine:
         # Higher surah number first (more deterministic for ambiguous matches).
         return self.surah_rank.get(name, 0)
 
+    def _normalize_and_correct(
+        self,
+        raw_term: str,
+        delims: str,
+        curr: dict[str, Node],
+        wd_counter: int,
+        find_err: bool,
+        errors: list[list],
+    ) -> str:
+        term = normalize_term(raw_term, delims)
+        if len(term) < 1:
+            return ""
+        if (term not in curr) and find_err:
+            corrected = self._match_with_error(term, curr)
+            if isinstance(corrected, str):
+                errors.append([term, corrected, wd_counter])
+                term = corrected
+        return term
+
     def _match_with_error(self, in_str: str, curr: dict[str, Node]) -> str | int:
         for t in curr:
             if Levenshtein.distance(in_str, t) == 1 and (t not in self.ambig):
@@ -105,15 +124,9 @@ class Engine:
 
         for t in terms[start_idx:]:
             wd_counter += 1
-            t = normalize_term(t, delims)
-            if len(t) < 1:
+            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors)
+            if not t:
                 continue
-            e: str | int = 0
-            if (t not in curr) and find_err:
-                e = self._match_with_error(t, curr)
-                if isinstance(e, str):
-                    errors.append([t, e, wd_counter])
-                    t = e
             if t in curr:
                 r_str = r_str + t + " "
                 result = curr[t].verses
@@ -125,11 +138,11 @@ class Engine:
                 curr = curr[t].children
             else:
                 missing = self._find_in_children(t, curr)
-                if missing:
-                    r_str = r_str + str(missing) + " " + t + " "
-                    temp_cur = curr[str(missing)].children
+                if isinstance(missing, str):
+                    r_str = r_str + missing + " " + t + " "
+                    temp_cur = curr[missing].children
                     result = temp_cur[t].verses
-                    errors.append([t, str(missing) + " " + t, wd_counter])
+                    errors.append([t, missing + " " + t, wd_counter])
                     if len(r_str.split()) > self.min_len_build and (temp_cur[t].terminal or temp_cur[t].abs_terminal):
                         r_str_final = r_str
                         result_final = result
@@ -141,10 +154,10 @@ class Engine:
                     if not next_exists:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
-                    if valid:
+                    if isinstance(valid, str):
                         errors.append([t, valid, wd_counter])
                         r_str = r_str + t + " "
-                        curr = curr[str(valid)].children
+                        curr = curr[valid].children
                         end_idx = indx + 1
                     else:
                         return result_final, r_str_final.strip(), errs, end_idx
@@ -163,15 +176,9 @@ class Engine:
 
         for t in terms[start_idx:]:
             wd_counter += 1
-            t = normalize_term(t, delims)
-            if len(t) < 1:
+            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors)
+            if not t:
                 continue
-            e: str | int = 0
-            if (t not in curr) and find_err:
-                e = self._match_with_error(t, curr)
-                if isinstance(e, str):
-                    errors.append([t, e, wd_counter])
-                    t = e
             if t in curr:
                 r_str = r_str + t + " "
                 result = curr[t].verses
