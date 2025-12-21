@@ -55,7 +55,7 @@ def _score_like_paper(gold: dict[str, int], pred: dict[str, int]) -> tuple[float
 
 
 def test_tweets_eval_metrics_against_gold() -> None:
-    gold_path = Path(__file__).resolve().parents[2] / "Quran_Detector" / "data" / "Tweets_Gold.txt"
+    gold_path = Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "tweets" / "tweets_gold.txt"
     assert gold_path.exists(), f"Missing tweets gold file at {gold_path}"
 
     settings = Settings(allowed_error_pct=0.2)

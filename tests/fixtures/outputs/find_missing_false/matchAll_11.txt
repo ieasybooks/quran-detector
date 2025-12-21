@@ -1,0 +1,1080 @@
+[
+  {
+    "aya_name": "الكهف",
+    "verses": [
+      "قال اقتلت نفسا زكيه بغير نفس"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 44428,
+    "endInText": 44434,
+    "aya_start": 74,
+    "aya_end": 74
+  },
+  {
+    "aya_name": "الإسراء",
+    "verses": [
+      "ومن يهد الله فهو المهتد"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4334,
+    "endInText": 4339,
+    "aya_start": 97,
+    "aya_end": 97
+  },
+  {
+    "aya_name": "الإسراء",
+    "verses": [
+      "قبل يوم القيامه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13318,
+    "endInText": 13321,
+    "aya_start": 58,
+    "aya_end": 58
+  },
+  {
+    "aya_name": "الإسراء",
+    "verses": [
+      "قبل يوم القيامه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13417,
+    "endInText": 13420,
+    "aya_start": 58,
+    "aya_end": 58
+  },
+  {
+    "aya_name": "الإسراء",
+    "verses": [
+      "له يوم القيامه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20321,
+    "endInText": 20324,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "هود",
+    "verses": [
+      "يضيع اجر المحسنين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 79222,
+    "endInText": 79225,
+    "aya_start": 115,
+    "aya_end": 115
+  },
+  {
+    "aya_name": "النحل",
+    "verses": [
+      "وانزلنا اليك الذكر لتبين للناس ما نزل اليهم ولعلهم يتفكرون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 331,
+    "endInText": 341,
+    "aya_start": 44,
+    "aya_end": 44
+  },
+  {
+    "aya_name": "النجم",
+    "verses": [
+      "وما ينطق عن الهوي",
+      "ان هو الا وحي يوحي"
+    ],
+    "errors": [
+      [
+        [
+          "الموي",
+          "الهوي",
+          418
+        ]
+      ],
+      []
+    ],
+    "startInText": 415,
+    "endInText": 424,
+    "aya_start": 3,
+    "aya_end": 4
+  },
+  {
+    "aya_name": "النجم",
+    "verses": [
+      "ما انزل الله بها من سلطان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 28170,
+    "endInText": 28176,
+    "aya_start": 23,
+    "aya_end": 23
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "من يطع الرسول فقد اطاع الله ومن تولي فما ارسلناك عليهم حفيظا"
+    ],
+    "errors": [
+      [
+        [
+          "ارسلنك",
+          "ارسلناك",
+          447
+        ]
+      ]
+    ],
+    "startInText": 438,
+    "endInText": 450,
+    "aya_start": 80,
+    "aya_end": 80
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "المسيح عيسي ابن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          10276
+        ]
+      ]
+    ],
+    "startInText": 10274,
+    "endInText": 10278,
+    "aya_start": 171,
+    "aya_end": 171
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "المسيح عيسي ابن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          10276
+        ]
+      ]
+    ],
+    "startInText": 10274,
+    "endInText": 10278,
+    "aya_start": 157,
+    "aya_end": 157
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "وان كنتم مرضي او علي سفر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 37858,
+    "endInText": 37864,
+    "aya_start": 43,
+    "aya_end": 43
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "واطيعوا الله واطيعوا الرسول واحذروا فان توليتم فاعلموا انما علي رسولنا البلاغ"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 450,
+    "endInText": 462,
+    "aya_start": 92,
+    "aya_end": 92
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "وعيسي ابن مريم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 1867,
+    "endInText": 1870,
+    "aya_start": 78,
+    "aya_end": 78
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "ولقد اخذ الله ميثاق بني اسرائيل وبعثنا منهم اثني عشر نقيبا"
+    ],
+    "errors": [
+      [
+        [
+          "اسراءيل",
+          "اسرائيل",
+          10418
+        ]
+      ]
+    ],
+    "startInText": 10413,
+    "endInText": 10424,
+    "aya_start": 12,
+    "aya_end": 12
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11439,
+    "endInText": 11442,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11999,
+    "endInText": 12002,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15094,
+    "endInText": 15097,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15114,
+    "endInText": 15117,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 18626,
+    "endInText": 18629,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 24990,
+    "endInText": 24993,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "وان كنتم مرضي او علي سفر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 37858,
+    "endInText": 37864,
+    "aya_start": 6,
+    "aya_end": 6
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 44334,
+    "endInText": 44337,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 45734,
+    "endInText": 45737,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 68415,
+    "endInText": 68418,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "ولقد اخذ الله ميثاق بني اسرائيل وبعثنا منهم اثني عشر نقيبا"
+    ],
+    "errors": [
+      [
+        [
+          "ميثق",
+          "ميثاق",
+          69280
+        ],
+        [
+          "اسراءيل",
+          "اسرائيل",
+          69282
+        ]
+      ]
+    ],
+    "startInText": 69277,
+    "endInText": 69288,
+    "aya_start": 12,
+    "aya_end": 12
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "الله يؤتيه من يشاء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 71678,
+    "endInText": 71682,
+    "aya_start": 54,
+    "aya_end": 54
+  },
+  {
+    "aya_name": "الحجر",
+    "verses": [
+      "انا نحن نزلنا الذكر وانا له لحافظون"
+    ],
+    "errors": [
+      [
+        [
+          "لحفظون",
+          "لحافظون",
+          518
+        ]
+      ]
+    ],
+    "startInText": 512,
+    "endInText": 519,
+    "aya_start": 9,
+    "aya_end": 9
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11439,
+    "endInText": 11442,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11999,
+    "endInText": 12002,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15094,
+    "endInText": 15097,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15114,
+    "endInText": 15117,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 18626,
+    "endInText": 18629,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 24990,
+    "endInText": 24993,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 44334,
+    "endInText": 44337,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 45734,
+    "endInText": 45737,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 68415,
+    "endInText": 68418,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11439,
+    "endInText": 11442,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11999,
+    "endInText": 12002,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15094,
+    "endInText": 15097,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15114,
+    "endInText": 15117,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 18626,
+    "endInText": 18629,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 24990,
+    "endInText": 24993,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 44334,
+    "endInText": 44337,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 45734,
+    "endInText": 45737,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 68415,
+    "endInText": 68418,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11439,
+    "endInText": 11442,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11999,
+    "endInText": 12002,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15094,
+    "endInText": 15097,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15114,
+    "endInText": 15117,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 18626,
+    "endInText": 18629,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "ويابي الله الا ان يتم نوره ولو كره الكافرون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20852,
+    "endInText": 20861,
+    "aya_start": 32,
+    "aya_end": 32
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 24990,
+    "endInText": 24993,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 44334,
+    "endInText": 44337,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 45734,
+    "endInText": 45737,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 68415,
+    "endInText": 68418,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالهدي ودين الحق"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 69474,
+    "endInText": 69477,
+    "aya_start": 33,
+    "aya_end": 33
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "يضيع اجر المحسنين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 79222,
+    "endInText": 79225,
+    "aya_start": 120,
+    "aya_end": 120
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "وعيسي ابن مريم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 1867,
+    "endInText": 1870,
+    "aya_start": 7,
+    "aya_end": 7
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "نوح وابراهيم وموسي وعيسي"
+    ],
+    "errors": [
+      [
+        [
+          "ونوح",
+          "نوح",
+          21306
+        ]
+      ]
+    ],
+    "startInText": 21306,
+    "endInText": 21310,
+    "aya_start": 7,
+    "aya_end": 7
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "لقد كان لكم في رسول الله اسوه حسنه"
+    ],
+    "errors": [
+      [
+        [
+          "ولقد",
+          "لقد",
+          78131
+        ]
+      ]
+    ],
+    "startInText": 78131,
+    "endInText": 78139,
+    "aya_start": 21,
+    "aya_end": 21
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "مشارق الارض ومغاربها"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2024,
+    "endInText": 2027,
+    "aya_start": 137,
+    "aya_end": 137
+  },
+  {
+    "aya_name": "الفتح",
+    "verses": [
+      "محمد رسول الله"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20034,
+    "endInText": 20037,
+    "aya_start": 29,
+    "aya_end": 29
+  },
+  {
+    "aya_name": "الفتح",
+    "verses": [
+      "بالهدي ودين الحق"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 69474,
+    "endInText": 69477,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "ما انزل الله بها من سلطان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 28170,
+    "endInText": 28176,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "يضيع اجر المحسنين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 79222,
+    "endInText": 79225,
+    "aya_start": 90,
+    "aya_end": 90
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "ان الذي فرض عليك القران لرادك الي معاد"
+    ],
+    "errors": [
+      [
+        [
+          "القرءان",
+          "القران",
+          12892
+        ]
+      ]
+    ],
+    "startInText": 12888,
+    "endInText": 12896,
+    "aya_start": 85,
+    "aya_end": 85
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "المسيح عيسي ابن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          10276
+        ]
+      ]
+    ],
+    "startInText": 10274,
+    "endInText": 10278,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "الله يؤتيه من يشاء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 71678,
+    "endInText": 71682,
+    "aya_start": 73,
+    "aya_end": 73
+  },
+  {
+    "aya_name": "الشعراء",
+    "verses": [
+      "يوم لا ينفع مال ولا بنون",
+      "الا من اتي الله بقلب سليم"
+    ],
+    "errors": [
+      [],
+      []
+    ],
+    "startInText": 4138,
+    "endInText": 4150,
+    "aya_start": 88,
+    "aya_end": 89
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "ان الحمد لله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 79581,
+    "endInText": 79586,
+    "aya_start": 10,
+    "aya_end": 10
+  },
+  {
+    "aya_name": "الصف",
+    "verses": [
+      "بالهدي ودين الحق"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 69474,
+    "endInText": 69477,
+    "aya_start": 9,
+    "aya_end": 9
+  },
+  {
+    "aya_name": "الطارق",
+    "verses": [
+      "انهم يكيدون كيدا",
+      "واكيد كيدا"
+    ],
+    "errors": [
+      [],
+      []
+    ],
+    "startInText": 23741,
+    "endInText": 23746,
+    "aya_start": 15,
+    "aya_end": 16
+  },
+  {
+    "aya_name": "الحديد",
+    "verses": [
+      "الله يؤتيه من يشاء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 71678,
+    "endInText": 71682,
+    "aya_start": 29,
+    "aya_end": 29
+  },
+  {
+    "aya_name": "الحديد",
+    "verses": [
+      "الله يؤتيه من يشاء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 71678,
+    "endInText": 71682,
+    "aya_start": 21,
+    "aya_end": 21
+  },
+  {
+    "aya_name": "الجمعة",
+    "verses": [
+      "الله يؤتيه من يشاء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 71678,
+    "endInText": 71682,
+    "aya_start": 4,
+    "aya_end": 4
+  }
+]

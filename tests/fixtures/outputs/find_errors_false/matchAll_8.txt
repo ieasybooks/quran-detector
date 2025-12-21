@@ -1,0 +1,3713 @@
+[
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "فلتقم طائفه منهم معك ولياخذوا"
+    ],
+    "errors": [
+      [
+        [
+          "معك",
+          "منهم معك",
+          5097
+        ]
+      ]
+    ],
+    "startInText": 5095,
+    "endInText": 5099,
+    "aya_start": 102,
+    "aya_end": 102
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "اسلحتهم فاذا سجدوا فليكونوا من ورائكم ولتان طائفه اخري لم يصلوا فليصلوا معك"
+    ],
+    "errors": [
+      [
+        [
+          "ولتان",
+          "ولتات",
+          5108
+        ]
+      ]
+    ],
+    "startInText": 5100,
+    "endInText": 5115,
+    "aya_start": 102,
+    "aya_end": 102
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "«لكن الراسخون في العلم منهم والمؤمنون يؤمنون بما انزل اليك وما انزل من قبلك والمقيمين الصلاه والمؤتون الزكاه والمؤمنون بالله واليوم الاخر اولئك سنؤتيهم اجرا عظيما"
+    ],
+    "errors": [
+      [
+        [
+          "«لكن",
+          "لكن",
+          7265
+        ]
+      ]
+    ],
+    "startInText": 7265,
+    "endInText": 7293,
+    "aya_start": 162,
+    "aya_end": 162
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "لكن الراسخون في العلم منهم والمؤمنون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7374,
+    "endInText": 7380,
+    "aya_start": 162,
+    "aya_end": 162
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 39,
+    "aya_end": 39
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 59,
+    "aya_end": 59
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 162,
+    "aya_end": 162
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "المسيح عيسي بن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          24454
+        ]
+      ]
+    ],
+    "startInText": 24452,
+    "endInText": 24456,
+    "aya_start": 171,
+    "aya_end": 171
+  },
+  {
+    "aya_name": "النساء",
+    "verses": [
+      "المسيح عيسي بن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          24454
+        ]
+      ]
+    ],
+    "startInText": 24452,
+    "endInText": 24456,
+    "aya_start": 157,
+    "aya_end": 157
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "من الايمان بالله واليوم الاخر"
+    ],
+    "errors": [
+      [
+        [
+          "الايمان",
+          "امن",
+          2808
+        ]
+      ]
+    ],
+    "startInText": 2807,
+    "endInText": 2812,
+    "aya_start": 18,
+    "aya_end": 18
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "نفر من كل فرقه منهم طائفه ليتفقهوا في الدين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5122,
+    "endInText": 5131,
+    "aya_start": 122,
+    "aya_end": 122
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "وخضتم كالذي خاضوا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5479,
+    "endInText": 5482,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "كالذين من قبلكم كانوا اشد منكم قوه واكثر اموالا واولادا فاستمتعوا بخلاقهم فاستمتعتم بخلاقكم كما استمتع الذين من قبلكم بخلاقهم وخضتم كالذي خاضوا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5792,
+    "endInText": 5818,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6652,
+    "endInText": 6655,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "الصلاه الا وهم كسالي"
+    ],
+    "errors": [
+      [
+        [
+          "وهم",
+          "الا وهم",
+          7358
+        ]
+      ]
+    ],
+    "startInText": 7357,
+    "endInText": 7360,
+    "aya_start": 54,
+    "aya_end": 54
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "من امن بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9244,
+    "endInText": 9249,
+    "aya_start": 18,
+    "aya_end": 18
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 18,
+    "aya_end": 18
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 19,
+    "aya_end": 19
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 44,
+    "aya_end": 44
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 99,
+    "aya_end": 99
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "والله ورسوله احق"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13891,
+    "endInText": 13894,
+    "aya_start": 62,
+    "aya_end": 62
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "والله ورسوله احق"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13899,
+    "endInText": 13902,
+    "aya_start": 62,
+    "aya_end": 62
+  },
+  {
+    "aya_name": "التوبة",
+    "verses": [
+      "والذين يكنزون الذهب والفضه ولا ينفقونها في سبيل الله فبشرهم بعذاب اليم"
+    ],
+    "errors": [
+      [
+        [
+          "الذين",
+          "والذين",
+          14012
+        ]
+      ]
+    ],
+    "startInText": 14012,
+    "endInText": 14024,
+    "aya_start": 34,
+    "aya_end": 34
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "لا يكلف الله نفسا الا وسعها"
+    ],
+    "errors": [
+      [
+        [
+          "نفسا",
+          "الله نفسا",
+          308
+        ]
+      ]
+    ],
+    "startInText": 306,
+    "endInText": 311,
+    "aya_start": 286,
+    "aya_end": 286
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "لهم اجرهم عند ربهم ولا خوف عليهم ولا هم يحزنون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2719,
+    "endInText": 2729,
+    "aya_start": 277,
+    "aya_end": 277
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "لهم اجرهم عند ربهم ولا خوف عليهم ولا هم يحزنون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2719,
+    "endInText": 2729,
+    "aya_start": 262,
+    "aya_end": 262
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "منهم بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2737,
+    "endInText": 2741,
+    "aya_start": 126,
+    "aya_end": 126
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "من الايمان بالله واليوم الاخر"
+    ],
+    "errors": [
+      [
+        [
+          "الايمان",
+          "امن",
+          2808
+        ]
+      ]
+    ],
+    "startInText": 2807,
+    "endInText": 2812,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "من الايمان بالله واليوم الاخر"
+    ],
+    "errors": [
+      [
+        [
+          "الايمان",
+          "امن",
+          2808
+        ]
+      ]
+    ],
+    "startInText": 2807,
+    "endInText": 2812,
+    "aya_start": 62,
+    "aya_end": 62
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "لا ينال عهدي الظالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3227,
+    "endInText": 3231,
+    "aya_start": 124,
+    "aya_end": 124
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "وقد كان فريق منهم يسمعون كلام الله ثم يحرفونه من بعد ما عقلوه وهم يعلمون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5181,
+    "endInText": 5196,
+    "aya_start": 75,
+    "aya_end": 75
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "نبذ فريق من الذين اوتوا الكتاب كتاب الله وراء ظهورهم كانهم لا يعلمون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5202,
+    "endInText": 5215,
+    "aya_start": 101,
+    "aya_end": 101
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "انفقوا مما رزقناكم من قبل ان ياتي"
+    ],
+    "errors": [
+      [
+        [
+          "وانفقوا",
+          "انفقوا",
+          6167
+        ]
+      ]
+    ],
+    "startInText": 6167,
+    "endInText": 6174,
+    "aya_start": 254,
+    "aya_end": 254
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "الم",
+      "ذلك الكتاب لا ريب"
+    ],
+    "errors": [
+      [],
+      []
+    ],
+    "startInText": 6427,
+    "endInText": 15225,
+    "aya_start": 1,
+    "aya_end": 2
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "مثلهم كمثل الذي استوقد نارا فلما اضاءت ما حوله ذهب الله بنورهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6842,
+    "endInText": 6855,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "كمثل الذي استوقد نارا فلما اضاءت ما حوله ذهب الله"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6868,
+    "endInText": 6878,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "كمثل الذي استوقد نارا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6936,
+    "endInText": 6940,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "فلما اضاءت ما حوله ذهب الله بنورهم"
+    ],
+    "errors": [
+      [
+        [
+          "بنورهم",
+          "الله بنورهم",
+          6947
+        ]
+      ]
+    ],
+    "startInText": 6942,
+    "endInText": 6948,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "ومثل الذين كفروا كمثل الذي ينعق بما لا يسمع الا دعاء ونداء"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7046,
+    "endInText": 7058,
+    "aya_start": 171,
+    "aya_end": 171
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "الذين ينفقون اموالهم في سبيل الله كمثل حبه انبتت سبع سنابل في كل سنبله مائه حبه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7128,
+    "endInText": 7145,
+    "aya_start": 261,
+    "aya_end": 261
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "ينفقون اموالهم في سبيل الله"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7196,
+    "endInText": 7201,
+    "aya_start": 262,
+    "aya_end": 262
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "ينفقون اموالهم في سبيل الله"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7196,
+    "endInText": 7201,
+    "aya_start": 261,
+    "aya_end": 261
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "حبه انبتت سبع سنابل"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7210,
+    "endInText": 7214,
+    "aya_start": 261,
+    "aya_end": 261
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "«يا ايها الذين امنوا كتب عليكم الصيام كما كتب علي الذين من قبلكم لعلكم تتقون"
+    ],
+    "errors": [
+      [
+        [
+          "«يا",
+          "يا",
+          8396
+        ]
+      ]
+    ],
+    "startInText": 8396,
+    "endInText": 8412,
+    "aya_start": 183,
+    "aya_end": 183
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "من امن بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9244,
+    "endInText": 9249,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "من امن بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9244,
+    "endInText": 9249,
+    "aya_start": 62,
+    "aya_end": 62
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "ليس البر ان تولوا وجوهكم قبل المشرق والمغرب ولكن البر من امن بالله واليوم الاخر والملائكه والكتاب والنبيين واتي المال علي حبه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9296,
+    "endInText": 9319,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 126,
+    "aya_end": 126
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 228,
+    "aya_end": 228
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 62,
+    "aya_end": 62
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 232,
+    "aya_end": 232
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 264,
+    "aya_end": 264
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "وليس البر بان تاتوا البيوت من ظهورها ولكن البر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9657,
+    "endInText": 9666,
+    "aya_start": 189,
+    "aya_end": 189
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "ولكن البر من امن بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9986,
+    "endInText": 9993,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "واتي المال علي حبه ذوي القربي"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9994,
+    "endInText": 10000,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "واقام الصلاه واتي الزكاه والموفون بعهدهم اذا عاهدوا والصابرون في الباساء والضراء وحين الباس"
+    ],
+    "errors": [
+      [
+        [
+          "والصابرون",
+          "والصابرين",
+          10011
+        ]
+      ]
+    ],
+    "startInText": 10001,
+    "endInText": 10017,
+    "aya_start": 177,
+    "aya_end": 177
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "عمن تمتع بالعمره الي الحج"
+    ],
+    "errors": [
+      [
+        [
+          "عمن",
+          "فمن",
+          12166
+        ]
+      ]
+    ],
+    "startInText": 12166,
+    "endInText": 12171,
+    "aya_start": 196,
+    "aya_end": 196
+  },
+  {
+    "aya_name": "البقرة",
+    "verses": [
+      "لم يجد فصيام ثلاثه ايام في الحج وسبعه اذا رجعتم تلك عشره"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 12178,
+    "endInText": 12190,
+    "aya_start": 196,
+    "aya_end": 196
+  },
+  {
+    "aya_name": "النمل",
+    "verses": [
+      "فاذا هم فريقان يختصمون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5339,
+    "endInText": 5343,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "النمل",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "النمل",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "لن ينال الله لحومها ولا دماؤها ولكن يناله التقوي منكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3339,
+    "endInText": 3350,
+    "aya_start": 37,
+    "aya_end": 37
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "لن ينال الله لحومها ولا دماؤها ولكن يناله التقوي منكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3582,
+    "endInText": 3593,
+    "aya_start": 37,
+    "aya_end": 37
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "هذان خصمان اختصموا في ربهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4937,
+    "endInText": 4942,
+    "aya_start": 19,
+    "aya_end": 19
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "هذان خصمان اختصما في ربهم"
+    ],
+    "errors": [
+      [
+        [
+          "اختصما",
+          "اختصموا",
+          4947
+        ]
+      ]
+    ],
+    "startInText": 4945,
+    "endInText": 4950,
+    "aya_start": 19,
+    "aya_end": 19
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "هذان خصمان اختصموا في ربهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5291,
+    "endInText": 5296,
+    "aya_start": 19,
+    "aya_end": 19
+  },
+  {
+    "aya_name": "الحج",
+    "verses": [
+      "اذان يسمعون بها"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 26850,
+    "endInText": 26853,
+    "aya_start": 46,
+    "aya_end": 46
+  },
+  {
+    "aya_name": "فصلت",
+    "verses": [
+      "لا ياتيه الغلط من بين يديه ولا من خلفه"
+    ],
+    "errors": [
+      [
+        [
+          "الغلط",
+          "الباطل",
+          6280
+        ]
+      ]
+    ],
+    "startInText": 6278,
+    "endInText": 6287,
+    "aya_start": 42,
+    "aya_end": 42
+  },
+  {
+    "aya_name": "فصلت",
+    "verses": [
+      "من بعد ضراء معه ليقولن"
+    ],
+    "errors": [
+      [
+        [
+          "معه",
+          "مسته",
+          7687
+        ]
+      ]
+    ],
+    "startInText": 7684,
+    "endInText": 7689,
+    "aya_start": 50,
+    "aya_end": 50
+  },
+  {
+    "aya_name": "فصلت",
+    "verses": [
+      "لا ياتيه الباطل من بين يديه ولا من خلفه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 24684,
+    "endInText": 24693,
+    "aya_start": 42,
+    "aya_end": 42
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "لن تنالوا البر حتي تنفقوا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3317,
+    "endInText": 3322,
+    "aya_start": 92,
+    "aya_end": 92
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "وقد بلغني الكبر وامراتي عاقر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3387,
+    "endInText": 3393,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "ودت طائفه من اهل الكتاب لو يضلونكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5052,
+    "endInText": 5059,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "ثم انزل عليكم من بعد الغم امنه نعاسا يغشي طائفه منكم وطائفه قد اهمتهم انفسهم يظنون بالله غير الحق ظن الجاهليه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5066,
+    "endInText": 5088,
+    "aya_start": 154,
+    "aya_end": 154
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "«ان تطيعوا فريقا من الذين اوتوا الكتاب يردوكم"
+    ],
+    "errors": [
+      [
+        [
+          "«ان",
+          "ان",
+          5233
+        ]
+      ]
+    ],
+    "startInText": 5233,
+    "endInText": 5241,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 114,
+    "aya_end": 114
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "مثل عيسي عند الله كمثل ادم خلقه من تراب ثم قال له كن فيكون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 10095,
+    "endInText": 10111,
+    "aya_start": 59,
+    "aya_end": 59
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "المسيح عيسي بن مريم"
+    ],
+    "errors": [
+      [
+        [
+          "بن",
+          "ابن",
+          24454
+        ]
+      ]
+    ],
+    "startInText": 24452,
+    "endInText": 24456,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "آل عمران",
+    "verses": [
+      "ورسولا الي بني اسرائيل"
+    ],
+    "errors": [
+      [
+        [
+          "رسولا",
+          "ورسولا",
+          25184
+        ]
+      ]
+    ],
+    "startInText": 25184,
+    "endInText": 25188,
+    "aya_start": 49,
+    "aya_end": 49
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "ان الذين امنوا والذين هادوا والصابئون والنصاري من امن بالله واليوم الاخر وعمل صالحا فلا خوف عليهم ولا هم يحزنون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2606,
+    "endInText": 2628,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "والذين هادوا والصابئون والنصاري من امن"
+    ],
+    "errors": [
+      [
+        [
+          "الذين",
+          "والذين",
+          2731
+        ]
+      ]
+    ],
+    "startInText": 2731,
+    "endInText": 2737,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "من الايمان بالله واليوم الاخر"
+    ],
+    "errors": [
+      [
+        [
+          "الايمان",
+          "امن",
+          2808
+        ]
+      ]
+    ],
+    "startInText": 2807,
+    "endInText": 2812,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "الله بشيء من الصيد تناله ايديكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3305,
+    "endInText": 3311,
+    "aya_start": 94,
+    "aya_end": 94
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "فان حزب الله هم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5136,
+    "endInText": 5140,
+    "aya_start": 56,
+    "aya_end": 56
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6652,
+    "endInText": 6655,
+    "aya_start": 119,
+    "aya_end": 119
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "من امن بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9244,
+    "endInText": 9249,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "عفا الله عما سلف"
+    ],
+    "errors": [
+      [
+        [
+          "وعفا",
+          "عفا",
+          21221
+        ]
+      ]
+    ],
+    "startInText": 21221,
+    "endInText": 21225,
+    "aya_start": 95,
+    "aya_end": 95
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "المسيح مع بني اسرائيل"
+    ],
+    "errors": [
+      [
+        [
+          "مع",
+          "يا",
+          22056
+        ]
+      ]
+    ],
+    "startInText": 22055,
+    "endInText": 22059,
+    "aya_start": 72,
+    "aya_end": 72
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "وكيف يحكمونك وعندهم التوراه فيها حكم الله"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 31909,
+    "endInText": 31917,
+    "aya_start": 43,
+    "aya_end": 43
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "وليحكم اهل الانجيل بما انزل الله فيه ومن لم يحكم بما انزل الله فاولئك هم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 31931,
+    "endInText": 31947,
+    "aya_start": 47,
+    "aya_end": 47
+  },
+  {
+    "aya_name": "المائدة",
+    "verses": [
+      "وليحكم اهل الانجيل بما انزل الله فيه ومن لم يحكم بما انزل الله فاولئك هم الفاسقون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 32069,
+    "endInText": 32086,
+    "aya_start": 47,
+    "aya_end": 47
+  },
+  {
+    "aya_name": "ص",
+    "verses": [
+      "وهل اتاك نبا الخصم اذ تسوروا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5039,
+    "endInText": 5045,
+    "aya_start": 21,
+    "aya_end": 21
+  },
+  {
+    "aya_name": "ص",
+    "verses": [
+      "اذ دخلوا علي داود ففزع منهم قالوا لا تخف خصمان بغي بعضنا علي بعض"
+    ],
+    "errors": [
+      [
+        [
+          "داود",
+          "داوود",
+          5305
+        ]
+      ]
+    ],
+    "startInText": 5302,
+    "endInText": 5318,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "ص",
+    "verses": [
+      "وخذ بيدك ضغنا فاضرب به ولا تحنث"
+    ],
+    "errors": [
+      [
+        [
+          "ضغنا",
+          "ضغثا",
+          27257
+        ]
+      ]
+    ],
+    "startInText": 27255,
+    "endInText": 27262,
+    "aya_start": 44,
+    "aya_end": 44
+  },
+  {
+    "aya_name": "ص",
+    "verses": [
+      "فاضرب به ولا تحنث"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 27279,
+    "endInText": 27283,
+    "aya_start": 44,
+    "aya_end": 44
+  },
+  {
+    "aya_name": "ق",
+    "verses": [
+      "وازلفت الجنه للمتقين غير بعيد"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4056,
+    "endInText": 4061,
+    "aya_start": 31,
+    "aya_end": 31
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "اولئك ينالهم نصيبهم من الكتاب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3596,
+    "endInText": 3601,
+    "aya_start": 37,
+    "aya_end": 37
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "ان الذين اتخذوا العجل سينالهم غضب من ربهم وذله في الحياه الدنيا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3604,
+    "endInText": 3616,
+    "aya_start": 152,
+    "aya_end": 152
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "وقطعناهم اثنتي عشره اسباطا امما"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4561,
+    "endInText": 4566,
+    "aya_start": 160,
+    "aya_end": 160
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "وقطعناهم اثنتي عشره"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4656,
+    "endInText": 4659,
+    "aya_start": 160,
+    "aya_end": 160
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 54,
+    "aya_end": 54
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 54,
+    "aya_end": 54
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "لن تراني ولكن انظر الي الجبل فان استقر مكانه فسوف تراني فلما تجلي ربه للجبل جعله دكا وخر موسي صعقا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25295,
+    "endInText": 25318,
+    "aya_start": 143,
+    "aya_end": 143
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "ببني اسرائيل البحر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25793,
+    "endInText": 25796,
+    "aya_start": 138,
+    "aya_end": 138
+  },
+  {
+    "aya_name": "الأعراف",
+    "verses": [
+      "اذان يسمعون بها"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 26850,
+    "endInText": 26853,
+    "aya_start": 195,
+    "aya_end": 195
+  },
+  {
+    "aya_name": "الحجر",
+    "verses": [
+      "تلك ايات الكتاب وقران مبين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15231,
+    "endInText": 15236,
+    "aya_start": 1,
+    "aya_end": 1
+  },
+  {
+    "aya_name": "القمر",
+    "verses": [
+      "الساعه وانشق القمر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 30224,
+    "endInText": 30228,
+    "aya_start": 1,
+    "aya_end": 1
+  },
+  {
+    "aya_name": "القمر",
+    "verses": [
+      "الساعه وانشق القمر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 30292,
+    "endInText": 30296,
+    "aya_start": 1,
+    "aya_end": 1
+  },
+  {
+    "aya_name": "القمر",
+    "verses": [
+      "الساعه وانشق القمر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 30446,
+    "endInText": 30450,
+    "aya_start": 1,
+    "aya_end": 1
+  },
+  {
+    "aya_name": "الشورى",
+    "verses": [
+      "وما يدريك لعل الساعه قريب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4013,
+    "endInText": 4019,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "الشورى",
+    "verses": [
+      "وما يدريك لعل الساعه قريب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 12142,
+    "endInText": 12148,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "الشورى",
+    "verses": [
+      "حم",
+      "عسق",
+      "كذلك يوحي اليك والي الذين من قبلك الله العزيز الحكيم"
+    ],
+    "errors": [
+      [],
+      [],
+      []
+    ],
+    "startInText": 15246,
+    "endInText": 15259,
+    "aya_start": 1,
+    "aya_end": 3
+  },
+  {
+    "aya_name": "الشورى",
+    "verses": [
+      "اليك والي الذين من قبلك الله العزيز الحكيم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 15281,
+    "endInText": 15289,
+    "aya_start": 3,
+    "aya_end": 3
+  },
+  {
+    "aya_name": "الإسراء",
+    "verses": [
+      "جهنم للكافرين حصيرا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4268,
+    "endInText": 4271,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 30,
+    "aya_end": 30
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 30,
+    "aya_end": 30
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "ان فرعون وهامان وجنودهما كانوا خاطئين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 22941,
+    "endInText": 22947,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "وقال فرعون يا ايها الملا ما علمت لكم من اله غيري فاوقد لي يا هامان علي الطين فاجعل لي صرحا لعلي اطلع الي اله موسي واني لاظنه من الكاذبين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 22948,
+    "endInText": 22982,
+    "aya_start": 38,
+    "aya_end": 38
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "وجنوده فنبذناهم في اليم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25594,
+    "endInText": 25598,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "ان قارون كان من قوم موسي فبغي"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 26058,
+    "endInText": 26065,
+    "aya_start": 76,
+    "aya_end": 76
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "ان قارون كان من قوم موسي فبقي عليهم"
+    ],
+    "errors": [
+      [
+        [
+          "فبقي",
+          "فبغي",
+          26882
+        ]
+      ]
+    ],
+    "startInText": 26876,
+    "endInText": 26884,
+    "aya_start": 76,
+    "aya_end": 76
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "فخسفنا به وبداره الارض فما كان له من فئه ينصرونه من دون الله وما كان من المنتصرين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 26885,
+    "endInText": 26904,
+    "aya_start": 81,
+    "aya_end": 81
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "«ان قارون كان من قوم موسي"
+    ],
+    "errors": [
+      [
+        [
+          "«ان",
+          "ان",
+          27086
+        ]
+      ]
+    ],
+    "startInText": 27086,
+    "endInText": 27092,
+    "aya_start": 76,
+    "aya_end": 76
+  },
+  {
+    "aya_name": "القصص",
+    "verses": [
+      "به وبداره الارض"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 27104,
+    "endInText": 27107,
+    "aya_start": 81,
+    "aya_end": 81
+  },
+  {
+    "aya_name": "غافر",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 64,
+    "aya_end": 64
+  },
+  {
+    "aya_name": "غافر",
+    "verses": [
+      "ان يقول ربي الله"
+    ],
+    "errors": [
+      [
+        [
+          "الله",
+          "ربي الله",
+          20649
+        ]
+      ]
+    ],
+    "startInText": 20647,
+    "endInText": 20650,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "غافر",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 64,
+    "aya_end": 64
+  },
+  {
+    "aya_name": "غافر",
+    "verses": [
+      "ابن لي صرحا لعلي ابلغ الاسباب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 22994,
+    "endInText": 23000,
+    "aya_start": 36,
+    "aya_end": 36
+  },
+  {
+    "aya_name": "غافر",
+    "verses": [
+      "ولقد ارسلنا موسي باياتنا وسلطان مبين",
+      "الي فرعون وهامان وقارون فقالوا ساحر",
+      "فلما جاءهم بالحق من عندنا قالوا اقتلوا ابناء الذين امنوا معه واستحيوا نساءهم وما كيد الكافرين"
+    ],
+    "errors": [
+      [],
+      [],
+      []
+    ],
+    "startInText": 25970,
+    "endInText": 26005,
+    "aya_start": 23,
+    "aya_end": 25
+  },
+  {
+    "aya_name": "فاطر",
+    "verses": [
+      "انما يدعو حزبه ليكونوا من اصحاب السعير"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5168,
+    "endInText": 5175,
+    "aya_start": 6,
+    "aya_end": 6
+  },
+  {
+    "aya_name": "المنافقون",
+    "verses": [
+      "احدكم الموت فيقول رب لولا اخرتني الي اجل قريب فاصدق واكن من الصالحين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6174,
+    "endInText": 6189,
+    "aya_start": 10,
+    "aya_end": 10
+  },
+  {
+    "aya_name": "المنافقون",
+    "verses": [
+      "لولا اخرتني الي اجل قريب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6399,
+    "endInText": 6404,
+    "aya_start": 10,
+    "aya_end": 10
+  },
+  {
+    "aya_name": "الأنبياء",
+    "verses": [
+      "النجوي الذين ظلموا هل هذا الا بشر مثلكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13064,
+    "endInText": 13073,
+    "aya_start": 3,
+    "aya_end": 3
+  },
+  {
+    "aya_name": "الأنبياء",
+    "verses": [
+      "الذين ظلموا هل هذا الا بشر مثلكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13148,
+    "endInText": 13156,
+    "aya_start": 3,
+    "aya_end": 3
+  },
+  {
+    "aya_name": "النحل",
+    "verses": [
+      "نعلم انهم يقولون انما يعلمه بشر لسان الذي يلحدون اليه اعجمي وهذا لسان عربي مبين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 29948,
+    "endInText": 29966,
+    "aya_start": 103,
+    "aya_end": 103
+  },
+  {
+    "aya_name": "المؤمنون",
+    "verses": [
+      "كل حزب بما لديهم فرحون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5146,
+    "endInText": 5151,
+    "aya_start": 53,
+    "aya_end": 53
+  },
+  {
+    "aya_name": "المؤمنون",
+    "verses": [
+      "كلا انها كلمه هو قائلها ومن ورائهم برزخ الي يوم يبعثون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6466,
+    "endInText": 6479,
+    "aya_start": 100,
+    "aya_end": 100
+  },
+  {
+    "aya_name": "الأنعام",
+    "verses": [
+      "ووهبنا له اسحاق ويعقوب كلا هدينا ونوحا هدينا من قبل ومن ذريته داود وسليمان وايوب ويوسف وموسي وهارون وكذلك نجزي المحسنين",
+      "وزكريا ويحيي وعيسي والياس كل من الصالحين",
+      "واسماعيل واليسع ويونس ولوطا وكلا فضلنا"
+    ],
+    "errors": [
+      [
+        [
+          "داود",
+          "داوود",
+          29305
+        ]
+      ],
+      [],
+      []
+    ],
+    "startInText": 29291,
+    "endInText": 29332,
+    "aya_start": 84,
+    "aya_end": 86
+  },
+  {
+    "aya_name": "النور",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 2,
+    "aya_end": 2
+  },
+  {
+    "aya_name": "النور",
+    "verses": [
+      "في بيوت انبياء الله"
+    ],
+    "errors": [
+      [
+        [
+          "انبياء",
+          "اذن",
+          21171
+        ]
+      ]
+    ],
+    "startInText": 21169,
+    "endInText": 21173,
+    "aya_start": 36,
+    "aya_end": 36
+  },
+  {
+    "aya_name": "الصافات",
+    "verses": [
+      "وجعلنا ذريته هم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 2451,
+    "endInText": 2454,
+    "aya_start": 77,
+    "aya_end": 77
+  },
+  {
+    "aya_name": "الصافات",
+    "verses": [
+      "لمثل هذا فليعمل العاملون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 30960,
+    "endInText": 30964,
+    "aya_start": 61,
+    "aya_end": 61
+  },
+  {
+    "aya_name": "العنكبوت",
+    "verses": [
+      "دعوا الله مخلصين له الدين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13416,
+    "endInText": 13421,
+    "aya_start": 65,
+    "aya_end": 65
+  },
+  {
+    "aya_name": "العنكبوت",
+    "verses": [
+      "وفرعون وهامان ولقد جاءهم موسي بالبينات فاستكبروا في الارض"
+    ],
+    "errors": [
+      [
+        [
+          "ولقد",
+          "وهامان ولقد",
+          25932
+        ]
+      ]
+    ],
+    "startInText": 25930,
+    "endInText": 25939,
+    "aya_start": 39,
+    "aya_end": 39
+  },
+  {
+    "aya_name": "لقمان",
+    "verses": [
+      "دعوا الله مخلصين له الدين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13416,
+    "endInText": 13421,
+    "aya_start": 32,
+    "aya_end": 32
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "اذا جاء اجلهم فلا يستاخرون ساعه ولا يستقدمون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6431,
+    "endInText": 6439,
+    "aya_start": 49,
+    "aya_end": 49
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "الذي يسيركم في البر والبحر حتي اذا كنتم في الفلك وجرين بهم بريح طيبه وفرحوا بها جاءتها ريح عاصف وجاءهم الموج من كل مكان وظنوا انهم احيط بهم"
+    ],
+    "errors": [
+      [
+        [
+          "عاصف",
+          "ريح عاصف",
+          13405
+        ]
+      ]
+    ],
+    "startInText": 13387,
+    "endInText": 13415,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "دعوا الله مخلصين له الدين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 13416,
+    "endInText": 13421,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "وقد عصيت قبل وكنت من المفسدين",
+      "فاليوم ننجيك ببدنك لتكون لمن خلفك"
+    ],
+    "errors": [
+      [],
+      []
+    ],
+    "startInText": 25615,
+    "endInText": 25629,
+    "aya_start": 91,
+    "aya_end": 92
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "البحر ابدان فرعون وجنوده"
+    ],
+    "errors": [
+      [
+        [
+          "ابدان",
+          "فاتبعهم",
+          25774
+        ]
+      ]
+    ],
+    "startInText": 25773,
+    "endInText": 25777,
+    "aya_start": 90,
+    "aya_end": 90
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "ببني اسرائيل البحر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25793,
+    "endInText": 25796,
+    "aya_start": 90,
+    "aya_end": 90
+  },
+  {
+    "aya_name": "يونس",
+    "verses": [
+      "في شك مما انزلنا اليك فاسال الذين يقراون الكتاب من قبلك لقد جاءك الحق من ربك فلا تكونن من الممترين"
+    ],
+    "errors": [
+      [
+        [
+          "يقراون",
+          "يقرءون",
+          31376
+        ]
+      ]
+    ],
+    "startInText": 31369,
+    "endInText": 31390,
+    "aya_start": 94,
+    "aya_end": 94
+  },
+  {
+    "aya_name": "مريم",
+    "verses": [
+      "وقد بلغت من الكبر عتيا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 3396,
+    "endInText": 3401,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "مريم",
+    "verses": [
+      "اخت هارون ما كان ابوك امرا سوء وما كانت امك"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 28762,
+    "endInText": 28774,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "البينة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6652,
+    "endInText": 6655,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "هود",
+    "verses": [
+      "ذهب السيئات عني"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 7690,
+    "endInText": 7693,
+    "aya_start": 10,
+    "aya_end": 10
+  },
+  {
+    "aya_name": "هود",
+    "verses": [
+      "ولئن اخرنا عنهم العذاب الي امه معدوده"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 8496,
+    "endInText": 8503,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "هود",
+    "verses": [
+      "ولقد ارسلنا موسي باياتنا وسلطان مبين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25970,
+    "endInText": 25976,
+    "aya_start": 96,
+    "aya_end": 96
+  },
+  {
+    "aya_name": "الفتح",
+    "verses": [
+      "ارسلناك شاهدا ومبشرا ونذيرا",
+      "لتؤمنوا بالله ورسوله وتعزروه وتوفروه وتسبحوه بكره واصيلا"
+    ],
+    "errors": [
+      [],
+      [
+        [
+          "وتوفروه",
+          "وتوقروه",
+          11337
+        ]
+      ]
+    ],
+    "startInText": 11328,
+    "endInText": 11341,
+    "aya_start": 8,
+    "aya_end": 9
+  },
+  {
+    "aya_name": "الفتح",
+    "verses": [
+      "شاهدا ومبشرا ونذيرا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11486,
+    "endInText": 11489,
+    "aya_start": 8,
+    "aya_end": 8
+  },
+  {
+    "aya_name": "الفتح",
+    "verses": [
+      "لتؤمنوا بالله ورسوله وتعزروه وتوفروه وتسبحوه بكره واصيلا"
+    ],
+    "errors": [
+      [
+        [
+          "وتوفروه",
+          "وتوقروه",
+          11530
+        ]
+      ]
+    ],
+    "startInText": 11526,
+    "endInText": 11534,
+    "aya_start": 9,
+    "aya_end": 9
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "فلما ذهبوا به واجمعوا ان يجعلوه",
+      "اباهم عشاء يبكون",
+      "قالوا يا ابانا انا ذهبنا نستبق وتركنا يوسف عند متاعنا فاكله الذئب"
+    ],
+    "errors": [
+      [],
+      [],
+      []
+    ],
+    "startInText": 10729,
+    "endInText": 11263,
+    "aya_start": 15,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "واوحينا اليه لتنبئنهم بامرهم هذا وهم لا يشعرون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 10738,
+    "endInText": 10747,
+    "aya_start": 15,
+    "aya_end": 15
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "فلما ذهبوا به واجمعوا ان يجعلوه"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11224,
+    "endInText": 11230,
+    "aya_start": 15,
+    "aya_end": 15
+  },
+  {
+    "aya_name": "يوسف",
+    "verses": [
+      "واوحينا اليه لتنبئنهم بامرهم هذا وهم لا يشعرون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11234,
+    "endInText": 11243,
+    "aya_start": 15,
+    "aya_end": 15
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "وما يدريك لعل الساعه تكون قريبا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4028,
+    "endInText": 4035,
+    "aya_start": 63,
+    "aya_end": 63
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "ويستاذن فريق منهم النبي يقولون ان بيوتنا عوره"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5220,
+    "endInText": 5229,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "ارسلناك شاهدا ومبشرا ونذيرا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11328,
+    "endInText": 11332,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "الأحزاب",
+    "verses": [
+      "شاهدا ومبشرا ونذيرا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11486,
+    "endInText": 11489,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "يس",
+    "verses": [
+      "قال من يحيي العظام وهي رميم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4071,
+    "endInText": 4078,
+    "aya_start": 78,
+    "aya_end": 78
+  },
+  {
+    "aya_name": "الذاريات",
+    "verses": [
+      "ارسلنا عليهم الريح العقيم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 4099,
+    "endInText": 4103,
+    "aya_start": 41,
+    "aya_end": 41
+  },
+  {
+    "aya_name": "الذاريات",
+    "verses": [
+      "وجنوده فنبذناهم في اليم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25594,
+    "endInText": 25598,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "الروم",
+    "verses": [
+      "كل حزب بما لديهم فرحون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5146,
+    "endInText": 5151,
+    "aya_start": 32,
+    "aya_end": 32
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "الا ان حزب الله هم المفلحون"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5157,
+    "endInText": 5163,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "رضي الله عنهم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 6652,
+    "endInText": 6655,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "المجادلة",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "الحجرات",
+    "verses": [
+      "وان طائفتان من المؤمنين اقتتلوا فاصلحوا بينهما"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 5325,
+    "endInText": 5332,
+    "aya_start": 9,
+    "aya_end": 9
+  },
+  {
+    "aya_name": "الحجرات",
+    "verses": [
+      "ان فيكم رسول الله"
+    ],
+    "errors": [
+      [
+        [
+          "رسول",
+          "فيكم رسول",
+          32007
+        ]
+      ]
+    ],
+    "startInText": 32006,
+    "endInText": 32009,
+    "aya_start": 7,
+    "aya_end": 7
+  },
+  {
+    "aya_name": "الشمس",
+    "verses": [
+      "رسول الله صلي الله"
+    ],
+    "errors": [
+      [
+        [
+          "صلي",
+          "ناقه",
+          5418
+        ]
+      ]
+    ],
+    "startInText": 5416,
+    "endInText": 5420,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "التحريم",
+    "verses": [
+      "«ان تتوبا الي الله فقد صغت"
+    ],
+    "errors": [
+      [
+        [
+          "«ان",
+          "ان",
+          14154
+        ]
+      ]
+    ],
+    "startInText": 14154,
+    "endInText": 14160,
+    "aya_start": 4,
+    "aya_end": 4
+  },
+  {
+    "aya_name": "الحشر",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 16,
+    "aya_end": 16
+  },
+  {
+    "aya_name": "الحشر",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 16,
+    "aya_end": 16
+  },
+  {
+    "aya_name": "الزخرف",
+    "verses": [
+      "قل ان كان للرحمن ولد فانا اول العابدين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 31728,
+    "endInText": 31737,
+    "aya_start": 81,
+    "aya_end": 81
+  },
+  {
+    "aya_name": "الطلاق",
+    "verses": [
+      "بالله واليوم الاخر"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 9333,
+    "endInText": 9336,
+    "aya_start": 2,
+    "aya_end": 2
+  },
+  {
+    "aya_name": "الشعراء",
+    "verses": [
+      "ان عبدت بني اسرائيل"
+    ],
+    "errors": [
+      [
+        [
+          "بني",
+          "عبدت بني",
+          10601
+        ]
+      ]
+    ],
+    "startInText": 10600,
+    "endInText": 10603,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "الشعراء",
+    "verses": [
+      "ان عبدت بني اسرائيل"
+    ],
+    "errors": [
+      [
+        [
+          "بني",
+          "عبدت بني",
+          21827
+        ]
+      ]
+    ],
+    "startInText": 21826,
+    "endInText": 21829,
+    "aya_start": 22,
+    "aya_end": 22
+  },
+  {
+    "aya_name": "محمد",
+    "verses": [
+      "يا ايها الذين امنوا ان تنصروا الله ينصركم ويثبت اقدامكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11602,
+    "endInText": 11613,
+    "aya_start": 7,
+    "aya_end": 7
+  },
+  {
+    "aya_name": "محمد",
+    "verses": [
+      "ام علي قلوب اقفالها"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 25883,
+    "endInText": 25887,
+    "aya_start": 24,
+    "aya_end": 24
+  },
+  {
+    "aya_name": "التغابن",
+    "verses": [
+      "ان تقرضوا الله قرضا حسنا يضاعفه لكم ويغفر لكم"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11622,
+    "endInText": 11631,
+    "aya_start": 17,
+    "aya_end": 17
+  },
+  {
+    "aya_name": "نوح",
+    "verses": [
+      "ما لكم لا ترجون لله وقارا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11795,
+    "endInText": 11801,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "نوح",
+    "verses": [
+      "ولا تزد الظالمين الا ضلالا"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 18451,
+    "endInText": 18456,
+    "aya_start": 24,
+    "aya_end": 24
+  },
+  {
+    "aya_name": "الانسان",
+    "verses": [
+      "اعتدنا للكافرين سلاسلا واغلالا"
+    ],
+    "errors": [
+      [
+        [
+          "سلاسلا",
+          "سلاسل",
+          11853
+        ]
+      ]
+    ],
+    "startInText": 11851,
+    "endInText": 11855,
+    "aya_start": 4,
+    "aya_end": 4
+  },
+  {
+    "aya_name": "الانسان",
+    "verses": [
+      "ويطاف عليهم بانيه من فضه واكواب"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 11856,
+    "endInText": 11863,
+    "aya_start": 15,
+    "aya_end": 15
+  },
+  {
+    "aya_name": "الجمعة",
+    "verses": [
+      "واذا راوا تجاره او لهوا انفضوا اليها"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 14054,
+    "endInText": 14061,
+    "aya_start": 11,
+    "aya_end": 11
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 21,
+    "aya_end": 21
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 18,
+    "aya_end": 18
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 23,
+    "aya_end": 23
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 16,
+    "aya_end": 16
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 25,
+    "aya_end": 25
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 30,
+    "aya_end": 30
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 32,
+    "aya_end": 32
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 34,
+    "aya_end": 34
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 77,
+    "aya_end": 77
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 57,
+    "aya_end": 57
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 59,
+    "aya_end": 59
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 61,
+    "aya_end": 61
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 63,
+    "aya_end": 63
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 65,
+    "aya_end": 65
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 67,
+    "aya_end": 67
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 71,
+    "aya_end": 71
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 73,
+    "aya_end": 73
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 75,
+    "aya_end": 75
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 36,
+    "aya_end": 36
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 38,
+    "aya_end": 38
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 42,
+    "aya_end": 42
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 47,
+    "aya_end": 47
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 49,
+    "aya_end": 49
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 51,
+    "aya_end": 51
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 53,
+    "aya_end": 53
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 16797,
+    "endInText": 16801,
+    "aya_start": 55,
+    "aya_end": 55
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 21,
+    "aya_end": 21
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 13,
+    "aya_end": 13
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 18,
+    "aya_end": 18
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 23,
+    "aya_end": 23
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 16,
+    "aya_end": 16
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 25,
+    "aya_end": 25
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 28,
+    "aya_end": 28
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 30,
+    "aya_end": 30
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 32,
+    "aya_end": 32
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 34,
+    "aya_end": 34
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 77,
+    "aya_end": 77
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 57,
+    "aya_end": 57
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 59,
+    "aya_end": 59
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 61,
+    "aya_end": 61
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 63,
+    "aya_end": 63
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 65,
+    "aya_end": 65
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 67,
+    "aya_end": 67
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 69,
+    "aya_end": 69
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 71,
+    "aya_end": 71
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 73,
+    "aya_end": 73
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 75,
+    "aya_end": 75
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 36,
+    "aya_end": 36
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 38,
+    "aya_end": 38
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 40,
+    "aya_end": 40
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 42,
+    "aya_end": 42
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 45,
+    "aya_end": 45
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 47,
+    "aya_end": 47
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 49,
+    "aya_end": 49
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 51,
+    "aya_end": 51
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 53,
+    "aya_end": 53
+  },
+  {
+    "aya_name": "الرحمن",
+    "verses": [
+      "فباي الاء ربكما تكذبان"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 17058,
+    "endInText": 17062,
+    "aya_start": 55,
+    "aya_end": 55
+  },
+  {
+    "aya_name": "التكوير",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 19015,
+    "endInText": 19018,
+    "aya_start": 29,
+    "aya_end": 29
+  },
+  {
+    "aya_name": "التكوير",
+    "verses": [
+      "الله رب العالمين"
+    ],
+    "errors": [
+      []
+    ],
+    "startInText": 20692,
+    "endInText": 20695,
+    "aya_start": 29,
+    "aya_end": 29
+  }
+]

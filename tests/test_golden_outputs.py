@@ -9,9 +9,10 @@ import pytest
 
 from quran_detector import Settings, annotate, detect
 
-WORKSPACE_ROOT = Path(__file__).resolve().parents[2]
-INPUTS_DIR = WORKSPACE_ROOT / "tests" / "inputs"
-OUTPUTS_DIR = WORKSPACE_ROOT / "tests" / "outputs"
+REPO_ROOT = Path(__file__).resolve().parents[1]
+FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures"
+INPUTS_DIR = FIXTURES_DIR / "inputs"
+OUTPUTS_DIR = FIXTURES_DIR / "outputs"
 
 
 def _load_text(path: Path) -> str:
