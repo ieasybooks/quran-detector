@@ -1,3 +1,18 @@
+<div align="center">
+  <a href="https://pypi.org/project/quran-detector" target="_blank"><img src="https://img.shields.io/pypi/v/quran-detector?label=PyPI%20Version&color=limegreen" /></a>
+  <a href="https://pypi.org/project/quran-detector" target="_blank"><img src="https://img.shields.io/pypi/pyversions/quran-detector?color=limegreen" /></a>
+  <a href="https://github.com/ieasybooks/quran-detector/blob/main/LICENSE" target="_blank"><img src="https://img.shields.io/pypi/l/quran-detector?color=limegreen" /></a>
+  <a href="https://pepy.tech/project/quran-detector" target="_blank"><img src="https://static.pepy.tech/badge/quran-detector" /></a>
+  <a href="https://github.com/ieasybooks/quran-detector/actions/workflows/pre-commit.yml" target="_blank"><img src="https://github.com/ieasybooks/quran-detector/actions/workflows/pre-commit.yml/badge.svg" /></a>
+</div>
+
+<div align="center">
+
+  [![ar](https://img.shields.io/badge/lang-ar-brightgreen.svg)](README.md)
+  [![en](https://img.shields.io/badge/lang-en-red.svg)](README.en.md)
+
+</div>
+
 <h2 dir="rtl">quran-detector</h2>
 
 <p dir="rtl">
