@@ -72,7 +72,9 @@ def normalize_text(text: str) -> str:
     return text
 
 
-_TASHKEEL_RE = re.compile(r"[\u0616-\u061A\u064B-\u0652\u06D6-\u06ED\u08F0-\u08F3\uFC5E-\uFC63\u0670]")
+_TASHKEEL_RE = re.compile(
+    r"[\u0616-\u061A\u064B-\u0652\u06D6-\u06ED\u08F0-\u08F3\uFC5E-\uFC63\u0670]"
+)
 
 
 def remove_tashkeel(text: str) -> str:

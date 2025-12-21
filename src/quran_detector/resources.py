@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from contextlib import ExitStack
 import xml.etree.ElementTree as ET
+from contextlib import ExitStack
 from dataclasses import dataclass
 from importlib import resources
 
@@ -16,7 +16,9 @@ class QuranData:
     stops: set[str]
 
 
-def _build_verse_dicts(sura_names: list[str]) -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
+def _build_verse_dicts(
+    sura_names: list[str],
+) -> tuple[dict[str, dict[str, str]], dict[str, dict[str, str]]]:
     q_orig: dict[str, dict[str, str]] = {name: {} for name in sura_names}
     q_norm: dict[str, dict[str, str]] = {name: {} for name in sura_names}
     return q_orig, q_norm
@@ -87,7 +89,9 @@ def load_bundled_data() -> QuranData:
         return QuranData(sura_names=sura_names, q_orig=q_orig, q_norm=q_norm, stops=stops)
 
 
-def load_data_from_paths(quran_simple_path: str, quran_index_path: str, nonterminals_path: str) -> QuranData:
+def load_data_from_paths(
+    quran_simple_path: str, quran_index_path: str, nonterminals_path: str
+) -> QuranData:
     sura_names = load_sura_names(quran_index_path)
     q_orig, q_norm = _build_verse_dicts(sura_names)
     load_quran_simple(quran_simple_path, sura_names, q_orig, q_norm)

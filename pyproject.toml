@@ -8,6 +8,11 @@ dependencies = [
   "python-Levenshtein>=0.25.1",
 ]
 
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.8.0",
+]
+
 [project.scripts]
 quran-detector = "quran_detector.cli:main"
 
@@ -26,3 +31,14 @@ quran_detector = ["data/*.txt", "data/*.xml"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["I"]

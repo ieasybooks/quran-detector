@@ -30,7 +30,9 @@ def _predict_counts(gold_path: Path, settings: Settings) -> dict[str, int]:
     return table
 
 
-def _score_like_paper(gold: dict[str, int], pred: dict[str, int]) -> tuple[float, float, float, float]:
+def _score_like_paper(
+    gold: dict[str, int], pred: dict[str, int]
+) -> tuple[float, float, float, float]:
     gold_total = sum(gold.values())
     pred_total = sum(pred.values())
 
@@ -67,4 +69,3 @@ def test_tweets_eval_metrics_against_gold() -> None:
     assert precision >= 0.968
     assert recall >= 0.948
     assert f_score >= 0.958
-

@@ -32,8 +32,15 @@ def main(argv: list[str] | None = None) -> int:
         io = sp.add_mutually_exclusive_group(required=True)
         io.add_argument("--input", type=str, help="Input file path")
         io.add_argument("--stdin", action="store_true", help="Read input text from stdin")
-        sp.add_argument("--find-errors", dest="find_errors", action=argparse.BooleanOptionalAction, default=True)
-        sp.add_argument("--find-missing", dest="find_missing", action=argparse.BooleanOptionalAction, default=True)
+        sp.add_argument(
+            "--find-errors", dest="find_errors", action=argparse.BooleanOptionalAction, default=True
+        )
+        sp.add_argument(
+            "--find-missing",
+            dest="find_missing",
+            action=argparse.BooleanOptionalAction,
+            default=True,
+        )
         sp.add_argument("--allowed-error-pct", type=float, default=0.25)
         sp.add_argument("--min-match", type=int, default=3)
         sp.add_argument("--delimiters", type=str, default=GLOBAL_DELIMITERS)
@@ -44,7 +51,9 @@ def main(argv: list[str] | None = None) -> int:
 
     p_annotate = sub.add_parser("annotate", help="Annotate text with detected Quran spans")
     add_common(p_annotate)
-    p_annotate.add_argument("--json", action="store_true", help="Output JSON string (useful for golden comparisons)")
+    p_annotate.add_argument(
+        "--json", action="store_true", help="Output JSON string (useful for golden comparisons)"
+    )
 
     args = parser.parse_args(argv)
     text = _read_input(args)
@@ -69,4 +78,3 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     return 2
-

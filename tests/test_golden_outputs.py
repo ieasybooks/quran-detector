@@ -9,7 +9,6 @@ import pytest
 
 from quran_detector import Settings, annotate, detect
 
-
 WORKSPACE_ROOT = Path(__file__).resolve().parents[2]
 INPUTS_DIR = WORKSPACE_ROOT / "tests" / "inputs"
 OUTPUTS_DIR = WORKSPACE_ROOT / "tests" / "outputs"
@@ -84,9 +83,10 @@ def _canonicalize_annotation(text: str, *, ambiguous_refs: set[str]) -> str:
         ref = m.group("ref")
         if ref in ambiguous_refs:
             return '"<AMBIG>"(REF)'
-        return f"\"{m.group('quote')}\"(REF)"
+        return f'"{m.group("quote")}"(REF)'
 
     return _ANNOTATION_RE.sub(repl, text).rstrip()
+
 
 def _unambiguous_records(golden_match_all: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_span: dict[tuple[int, int], list[dict[str, Any]]] = {}
@@ -154,4 +154,6 @@ def test_annotate_txt_against_golden(setting_name: str, settings: Settings, book
     assert actual != input_text
 
     for ref in expected_refs:
-        assert ref in actual, f"Missing reference {ref} in annotated output for book {book_num} ({setting_name})"
+        assert ref in actual, (
+            f"Missing reference {ref} in annotated output for book {book_num} ({setting_name})"
+        )

@@ -19,4 +19,3 @@ def detect(text: str, settings: Settings = Settings()) -> list[dict]:
 
 def annotate(text: str, settings: Settings = Settings()) -> str:
     return get_engine().annotate(text, settings=settings)
-

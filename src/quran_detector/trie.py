@@ -71,4 +71,3 @@ def add_verse(
             min_len=min_len,
             stops=stops,
         )
-

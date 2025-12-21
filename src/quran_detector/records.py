@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
 import logging
+from dataclasses import dataclass
 from typing import Any
 
 from .config import GLOBAL_DELIMITERS
@@ -108,7 +108,9 @@ class MatchRecord:
             return st_str + " ".join(result) + end_str
         return orig
 
-    def get_orig_str(self, orig_verses: dict[str, dict[str, str]], norm_verses: dict[str, dict[str, str]]) -> str:
+    def get_orig_str(
+        self, orig_verses: dict[str, dict[str, str]], norm_verses: dict[str, dict[str, str]]
+    ) -> str:
         v_count = self.aya_end - self.aya_start + 1
         out = '"'
         end_str = "(" + self.surah_name + ":" + str(self.aya_start)
@@ -118,7 +120,9 @@ class MatchRecord:
         for i in range(v_count - 1):
             out = (
                 out
-                + self._get_correct_span(i, self.surah_name, str(self.aya_start + i), orig_verses, norm_verses)
+                + self._get_correct_span(
+                    i, self.surah_name, str(self.aya_start + i), orig_verses, norm_verses
+                )
                 + "، "
             )
         out = (
