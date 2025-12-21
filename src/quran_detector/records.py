@@ -34,8 +34,8 @@ class MatchRecord:
             "surah_name": self.surah_name,
             "verses": self.verses,
             "errors": self.errors,
-            "startInText": self.start_in_text,
-            "endInText": self.end_in_text,
+            "start_in_text": self.start_in_text,
+            "end_in_text": self.end_in_text,
             "aya_start": self.aya_start,
             "aya_end": self.aya_end,
         }

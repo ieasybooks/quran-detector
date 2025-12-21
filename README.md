@@ -99,7 +99,7 @@ annotated = annotate(text, settings=Settings())</code></pre>
   <li><code>aya_start</code> و <code>aya_end</code>: نطاق الآية (شاملًا)</li>
   <li><code>verses</code>: قائمة بمقاطع/نصوص التطابق (بعد التطبيع)</li>
   <li><code>errors</code>: قائمة قوائم تشرح التصحيحات لكل مقطع</li>
-  <li><code>startInText</code> و <code>endInText</code>: فهارس كلمات بالنسبة لـ <code>text.split()</code> بعد تجهيز الرموز داخليًا</li>
+  <li><code>start_in_text</code> و <code>end_in_text</code>: فهارس كلمات بالنسبة لـ <code>text.split()</code> بعد تجهيز الرموز داخليًا</li>
 </ul>
 
 <p dir="rtl"><strong>ملاحظات:</strong></p>
@@ -184,7 +184,7 @@ annotated = annotate(text, settings=Settings())</code></pre>
 </ol>
 
 <p dir="rtl">
-للتفاصيل النظرية والخوارزمية، راجع <code>paper.md</code> / <code>paper.pdf</code> في المستودع الأم الذي تم تطوير هذه الإعادة ضمنه.
+للتفاصيل النظرية والخوارزمية، راجع الورقة البحثية من خلال الرابط في الأعلى.
 </p>
 
 <h2 dir="rtl">البيانات / الموارد</h2>

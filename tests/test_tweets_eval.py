@@ -25,7 +25,7 @@ def _predict_counts(gold_path: Path, settings: Settings) -> dict[str, int]:
         tweet_id = parts[0].strip()
         tweet = parts[1].strip()
         records = detect(tweet, settings=settings)
-        spans = {(int(r["startInText"]), int(r["endInText"])) for r in records}
+        spans = {(int(r["start_in_text"]), int(r["end_in_text"])) for r in records}
         table[tweet_id] = len(spans)
     return table
 

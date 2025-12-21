@@ -104,7 +104,7 @@ Internally, a singleton `Engine` is lazily initialized on first call and uses bu
 - `aya_start`, `aya_end`: verse range (inclusive)
 - `verses`: list of matched verse fragments (normalized words)
 - `errors`: list-of-lists describing per-fragment corrections
-- `startInText`, `endInText`: token indices into `text.split()` after internal symbol padding
+- `start_in_text`, `end_in_text`: token indices into `text.split()` after internal symbol padding
 
 Notes:
 
@@ -171,7 +171,7 @@ At a high level, the approach is a customized multi-pattern matching method insp
    - Applies minimum length, stop-verse filtering, and an error-rate threshold (`allowed_error_pct`)
    - Applies a stopword-percentage heuristic for short fragments (paper/legacy behavior)
 
-For details, see `paper.md` / `paper.pdf` in the parent repository this was developed in.
+For details, see the paper link in the above block.
 
 ## Data / Resources
 

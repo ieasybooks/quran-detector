@@ -38,12 +38,16 @@ def _canonicalize_match_records(records: list[dict[str, Any]]) -> list[dict[str,
         rec = dict(rec)
         if "aya_name" in rec and "surah_name" not in rec:
             rec["surah_name"] = rec.pop("aya_name")
+        if "startInText" in rec and "start_in_text" not in rec:
+            rec["start_in_text"] = rec.pop("startInText")
+        if "endInText" in rec and "end_in_text" not in rec:
+            rec["end_in_text"] = rec.pop("endInText")
         normalized.append(norm_value(rec))
 
     def key(rec: dict[str, Any]) -> tuple[Any, ...]:
         return (
-            rec.get("startInText"),
-            rec.get("endInText"),
+            rec.get("start_in_text"),
+            rec.get("end_in_text"),
             rec.get("surah_name"),
             rec.get("aya_start"),
             rec.get("aya_end"),
@@ -67,7 +71,9 @@ def _ref_for_record(rec: dict[str, Any]) -> str:
 def _ambiguous_refs(golden_match_all: list[dict[str, Any]]) -> set[str]:
     by_span: dict[tuple[int, int], list[dict[str, Any]]] = {}
     for rec in golden_match_all:
-        by_span.setdefault((rec["startInText"], rec["endInText"]), []).append(rec)
+        start = rec.get("start_in_text", rec["startInText"])
+        end = rec.get("end_in_text", rec["endInText"])
+        by_span.setdefault((start, end), []).append(rec)
     refs: set[str] = set()
     for span, group in by_span.items():
         if len(group) <= 1:
@@ -92,7 +98,9 @@ def _canonicalize_annotation(text: str, *, ambiguous_refs: set[str]) -> str:
 def _unambiguous_records(golden_match_all: list[dict[str, Any]]) -> list[dict[str, Any]]:
     by_span: dict[tuple[int, int], list[dict[str, Any]]] = {}
     for rec in golden_match_all:
-        by_span.setdefault((rec["startInText"], rec["endInText"]), []).append(rec)
+        start = rec.get("start_in_text", rec["startInText"])
+        end = rec.get("end_in_text", rec["endInText"])
+        by_span.setdefault((start, end), []).append(rec)
     out: list[dict[str, Any]] = []
     for _span, group in by_span.items():
         if len(group) == 1:
@@ -103,7 +111,8 @@ def _unambiguous_records(golden_match_all: list[dict[str, Any]]) -> list[dict[st
 def _unambiguous_start_refs(golden_match_all: list[dict[str, Any]]) -> set[str]:
     by_start: dict[int, list[dict[str, Any]]] = {}
     for rec in golden_match_all:
-        by_start.setdefault(rec["startInText"], []).append(rec)
+        start = rec.get("start_in_text", rec["startInText"])
+        by_start.setdefault(start, []).append(rec)
     refs: set[str] = set()
     for _start, group in by_start.items():
         if len(group) != 1:
