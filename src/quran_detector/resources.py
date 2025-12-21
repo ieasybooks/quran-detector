@@ -78,7 +78,7 @@ def load_bundled_data() -> QuranData:
     with ExitStack() as stack:
         quran_index = stack.enter_context(resources.as_file(data_dir / "quran-index.xml"))
         quran_simple = stack.enter_context(resources.as_file(data_dir / "quran-simple.txt"))
-        nonterminals = stack.enter_context(resources.as_file(data_dir / "nonTerminals.txt"))
+        nonterminals = stack.enter_context(resources.as_file(data_dir / "non-terminals.txt"))
 
         sura_names = load_sura_names(str(quran_index))
         q_orig, q_norm = _build_verse_dicts(sura_names)
