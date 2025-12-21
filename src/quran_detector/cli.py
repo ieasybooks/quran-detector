@@ -60,21 +60,21 @@ def main(argv: list[str] | None = None) -> int:
     settings = _settings_from_args(args)
 
     if args.cmd == "detect":
-        out = detect(text, settings=settings)
+        records = detect(text, settings=settings)
         pretty = args.pretty
         if pretty is None:
             pretty = sys.stdout.isatty()
-        json.dump(out, sys.stdout, ensure_ascii=False, indent=2 if pretty else None)
+        json.dump(records, sys.stdout, ensure_ascii=False, indent=2 if pretty else None)
         sys.stdout.write("\n")
         return 0
 
     if args.cmd == "annotate":
-        out = annotate(text, settings=settings)
+        annotated = annotate(text, settings=settings)
         if args.json:
-            sys.stdout.write(json.dumps(out, ensure_ascii=False, indent=2))
+            sys.stdout.write(json.dumps(annotated, ensure_ascii=False, indent=2))
             sys.stdout.write("\n")
         else:
-            sys.stdout.write(out)
+            sys.stdout.write(annotated)
         return 0
 
     return 2

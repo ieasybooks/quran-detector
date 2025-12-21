@@ -43,7 +43,7 @@ class MatchRecord:
     def _get_extra_cnt(self, in_list: list[str] | str, extra_list: list[str]) -> int:
         cnt = 0
         for item in extra_list:
-            cnt += in_list.count(item)  # type: ignore[arg-type]
+            cnt += in_list.count(item)
         return cnt
 
     def _get_start_index(self, t1: str, t2: str, n_orig: str) -> int:

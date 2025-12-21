@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import Levenshtein
 
@@ -34,10 +34,10 @@ class Engine:
     min_len_build: int = 3
 
     besm: str = "بسم الله الرحمن الرحيم"
-    stop_verses: list[str] = None  # type: ignore[assignment]
+    stop_verses: list[str] = field(default_factory=list)
 
     def __post_init__(self) -> None:
-        if self.stop_verses is None:
+        if not self.stop_verses:
             self.stop_verses = [self.besm, "الله ونعم الوكيل", "الحمد لله"]
 
     @classmethod
@@ -110,12 +110,12 @@ class Engine:
             t = normalize_term(t, delims)
             if len(t) < 1:
                 continue
-            e: str | int = False
+            e: str | int = 0
             if (t not in curr) and find_err:
                 e = self._match_with_error(t, curr)
-                if e:
-                    errors.append([t, e, wd_counter])  # type: ignore[list-item]
-                    t = e  # type: ignore[assignment]
+                if isinstance(e, str):
+                    errors.append([t, e, wd_counter])
+                    t = e
             if t in curr:
                 r_str = r_str + t + " "
                 result = curr[t].verses
@@ -128,10 +128,10 @@ class Engine:
             else:
                 missing = self._find_in_children(t, curr)
                 if missing:
-                    r_str = r_str + missing + " " + t + " "  # type: ignore[operator]
-                    temp_cur = curr[missing].children  # type: ignore[index]
+                    r_str = r_str + str(missing) + " " + t + " "
+                    temp_cur = curr[str(missing)].children
                     result = temp_cur[t].verses
-                    errors.append([t, missing + " " + t, wd_counter])  # type: ignore[list-item,operator]
+                    errors.append([t, str(missing) + " " + t, wd_counter])
                     if len(r_str.split()) > self.min_len_build and (
                         temp_cur[t].terminal or temp_cur[t].abs_terminal
                     ):
@@ -148,9 +148,9 @@ class Engine:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
                     if valid:
-                        errors.append([t, valid, wd_counter])  # type: ignore[list-item]
+                        errors.append([t, valid, wd_counter])
                         r_str = r_str + t + " "
-                        curr = curr[valid].children  # type: ignore[index]
+                        curr = curr[str(valid)].children
                         end_idx = indx + 1
                     else:
                         return result_final, r_str_final.strip(), errs, end_idx
@@ -172,12 +172,12 @@ class Engine:
             t = normalize_term(t, delims)
             if len(t) < 1:
                 continue
-            e: str | int = False
+            e: str | int = 0
             if (t not in curr) and find_err:
                 e = self._match_with_error(t, curr)
-                if e:
-                    errors.append([t, e, wd_counter])  # type: ignore[list-item]
-                    t = e  # type: ignore[assignment]
+                if isinstance(e, str):
+                    errors.append([t, e, wd_counter])
+                    t = e
             if t in curr:
                 r_str = r_str + t + " "
                 result = curr[t].verses
@@ -201,9 +201,9 @@ class Engine:
         first = normalize_term(term, delims)
         e = "و" + first
         found = False
-        rf2: set[VerseRef] | int = 0
-        rs2: str | int = 0
-        err2: list[list] | int = 0
+        rf2: set[VerseRef] = set()
+        rs2 = ""
+        err2: list[list] = []
         end2: int = 0
 
         if first.startswith("و") and first[1:] in curr:
@@ -217,18 +217,18 @@ class Engine:
             rf2, rs2, err2, end2 = self._match_single_verse(
                 terms, curr, start_idx, delims, find_err
             )
-            err2.append([first, terms[start_idx], start_idx])  # type: ignore[union-attr]
+            err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
             rf2, rs2, err2, end2 = self._match_single_verse(
                 terms, curr, start_idx, delims, find_err
             )
-            err2.append([first, first[1:], start_idx])  # type: ignore[union-attr]
+            err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
-        if len(str(rs2)) > len(rs1):
-            return rf2, str(rs2), err2, end2  # type: ignore[return-value]
+        if len(rs2) > len(rs1):
+            return rf2, rs2, err2, end2
         return rf1, rs1, err1, end1
 
     def _match_long_verse_detect_missing(
@@ -238,9 +238,9 @@ class Engine:
         first = normalize_term(term, delims)
         e = "و" + first
         found = False
-        rf2: set[VerseRef] | int = 0
-        rs2: str | int = 0
-        err2: list[list] | int = 0
+        rf2: set[VerseRef] = set()
+        rs2 = ""
+        err2: list[list] = []
         end2: int = 0
 
         if first.startswith("و") and first[1:] in curr:
@@ -259,26 +259,26 @@ class Engine:
             rf2, rs2, err2, end2 = self._match_detect_missing_verse(
                 terms, curr, start_idx, delims, find_err
             )
-            err2.append([first, terms[start_idx], start_idx])  # type: ignore[union-attr]
+            err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
             rf2, rs2, err2, end2 = self._match_detect_missing_verse(
                 terms, curr, start_idx, delims, find_err
             )
-            err2.append([first, first[1:], start_idx])  # type: ignore[union-attr]
+            err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
-        if len(str(rs2).split()) > len(rs1.split()):
-            return rf2, str(rs2), err2, end2  # type: ignore[return-value]
+        if len(rs2.split()) > len(rs1.split()):
+            return rf2, rs2, err2, end2
         return rf1, rs1, err1, end1
 
     def _locate_verse_with_name(
         self, name: str, verses: set[VerseRef], prefer_number: int | None = None
-    ) -> VerseRef | int:
+    ) -> VerseRef | None:
         candidates = [r for r in verses if r.name == name]
         if not candidates:
-            return -1
+            return None
         # Only apply the merge-preference heuristic for small ambiguous sets.
         # Some very common fragments map to many verses in the same surah; in such cases
         # forcing a sequential merge candidate can create incorrect long merges.
@@ -306,7 +306,7 @@ class Engine:
         idx = mem_aya.index(k.name)
         prev = int(k.number) - 1
         if prev == mem_vs[idx]:
-            active: MatchRecord | int = 0
+            active: MatchRecord | None = None
             recs = result[k.name]
             if len(recs) == 1:
                 active = recs[0]
@@ -315,10 +315,12 @@ class Engine:
                     if r.aya_end == prev:
                         active = r
                         break
-            active.verses.append(cv)  # type: ignore[union-attr]
-            active.aya_end = int(k.number)  # type: ignore[union-attr]
-            active.end_in_text = end  # type: ignore[union-attr]
-            active.errors.append(er)  # type: ignore[union-attr]
+            if active is None:
+                return True
+            active.verses.append(cv)
+            active.aya_end = int(k.number)
+            active.end_in_text = end
+            active.errors.append(er)
 
             for g in range(len(mem)):
                 if g != idx:
@@ -330,7 +332,7 @@ class Engine:
                         for r in recs2:
                             # Preserve legacy behavior: idx_to_del is a str, r.aya_start is an int,
                             # so this comparison is effectively always False (no deletion occurs).
-                            if r.aya_start == idx_to_del:  # type: ignore[comparison-overlap]
+                            if r.aya_start == idx_to_del:
                                 recs2.pop(cnt)
                                 break
                             cnt = +1
@@ -394,7 +396,7 @@ class Engine:
                             idx = mem_aya.index(v_name)
                             prefer_number = mem_vs[idx] + 1
                         k = self._locate_verse_with_name(v_name, r, prefer_number=prefer_number)
-                        if k == -1:
+                        if k is None:
                             continue
                         create_new_rec = self._update_results(
                             k, mem_aya, mem_vs, mem, result, er, r_str, start, end
