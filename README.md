@@ -10,6 +10,8 @@
     Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
     <br />
     Paper link: https://www.sciencedirect.com/science/article/pii/S1877050921012321
+    <br />
+    Legacy implementation repo: https://github.com/SElBeltagy/Quran_Detector
   </p>
 </blockquote>
 

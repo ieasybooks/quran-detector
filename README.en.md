@@ -6,6 +6,8 @@ Detect Quranic verses and verse fragments in Arabic text (tweets, articles, book
 > Samhaa R. El-Beltagy and Ahmed Rafea, Procedia Computer Science 189 (2021) 374–381.
 >
 > Paper link: https://www.sciencedirect.com/science/article/pii/S1877050921012321
+>
+> Legacy implementation repo: https://github.com/SElBeltagy/Quran_Detector
 
 This is a modern rewrite of the legacy `Quran_Detector` project with a clean Python API, a CLI, bundled Quran resources, and golden-file regression tests.
 
