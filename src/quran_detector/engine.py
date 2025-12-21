@@ -46,9 +46,7 @@ class Engine:
         return cls._from_data(data)
 
     @classmethod
-    def from_paths(
-        cls, quran_simple_path: str, quran_index_path: str, nonterminals_path: str
-    ) -> "Engine":
+    def from_paths(cls, quran_simple_path: str, quran_index_path: str, nonterminals_path: str) -> "Engine":
         data = load_data_from_paths(quran_simple_path, quran_index_path, nonterminals_path)
         return cls._from_data(data)
 
@@ -132,18 +130,14 @@ class Engine:
                     temp_cur = curr[str(missing)].children
                     result = temp_cur[t].verses
                     errors.append([t, str(missing) + " " + t, wd_counter])
-                    if len(r_str.split()) > self.min_len_build and (
-                        temp_cur[t].terminal or temp_cur[t].abs_terminal
-                    ):
+                    if len(r_str.split()) > self.min_len_build and (temp_cur[t].terminal or temp_cur[t].abs_terminal):
                         r_str_final = r_str
                         result_final = result
                         errs = errors
                         end_idx = wd_counter + 1
                     curr = temp_cur[t].children
                 else:
-                    next_exists, next_term, indx = get_next_valid_term(
-                        terms, delims, wd_counter + 1
-                    )
+                    next_exists, next_term, indx = get_next_valid_term(terms, delims, wd_counter + 1)
                     if not next_exists:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
@@ -214,16 +208,12 @@ class Engine:
         rf1, rs1, err1, end1 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
         if not found:
             terms[start_idx] = "و" + first
-            rf2, rs2, err2, end2 = self._match_single_verse(
-                terms, curr, start_idx, delims, find_err
-            )
+            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
             err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
-            rf2, rs2, err2, end2 = self._match_single_verse(
-                terms, curr, start_idx, delims, find_err
-            )
+            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
             err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
@@ -248,24 +238,18 @@ class Engine:
         if len(terms[start_idx:]) > 0 and (e not in curr) and (not found):
             return self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
 
-        rf1, rs1, err1, end1 = self._match_detect_missing_verse(
-            terms, curr, start_idx, delims, find_err
-        )
+        rf1, rs1, err1, end1 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
         if len(rs1.split()) == len(terms[start_idx:]):
             return rf1, rs1, err1, end1
 
         if not found:
             terms[start_idx] = "و" + first
-            rf2, rs2, err2, end2 = self._match_detect_missing_verse(
-                terms, curr, start_idx, delims, find_err
-            )
+            rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
             err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
-            rf2, rs2, err2, end2 = self._match_detect_missing_verse(
-                terms, curr, start_idx, delims, find_err
-            )
+            rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
             err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
@@ -370,13 +354,9 @@ class Engine:
                 r_str = ""
                 er: list[list] = []
                 if find_missing:
-                    r, r_str, er, end = self._match_long_verse_detect_missing(
-                        terms, self.trie, i, delims, find_err
-                    )
+                    r, r_str, er, end = self._match_long_verse_detect_missing(terms, self.trie, i, delims, find_err)
                 else:
-                    r, r_str, er, end = self._match_long_verse(
-                        terms, self.trie, i, delims, find_err
-                    )
+                    r, r_str, er, end = self._match_long_verse(terms, self.trie, i, delims, find_err)
                 if len(r) == 0:
                     mem_aya = []
                     mem_vs = []
@@ -398,9 +378,7 @@ class Engine:
                         k = self._locate_verse_with_name(v_name, r, prefer_number=prefer_number)
                         if k is None:
                             continue
-                        create_new_rec = self._update_results(
-                            k, mem_aya, mem_vs, mem, result, er, r_str, start, end
-                        )
+                        create_new_rec = self._update_results(k, mem_aya, mem_vs, mem, result, er, r_str, start, end)
                         found = not create_new_rec
                         aya = k.to_str()
                         mem_aya.append(k.name)
@@ -455,9 +433,7 @@ class Engine:
 
     def annotate(self, text: str, settings: Settings = Settings()) -> str:
         text = pad_symbols(text)
-        recs, _errs = self._match_verses_in_text(
-            text, settings.find_errors, settings.find_missing, settings.delimiters
-        )
+        recs, _errs = self._match_verses_in_text(text, settings.find_errors, settings.find_missing, settings.delimiters)
         seen: list[tuple[int, int]] = []
         all_terms = text.split()
         replacement_index = 0
@@ -479,21 +455,14 @@ class Engine:
 
         for idx in sorted(replacement_recs):
             r = replacement_recs[idx]
-            result = (
-                result
-                + " ".join(all_terms[replacement_index : r.start_in_text])
-                + replacement_texts[idx]
-                + " "
-            )
+            result = result + " ".join(all_terms[replacement_index : r.start_in_text]) + replacement_texts[idx] + " "
             replacement_index = r.end_in_text
         result = result.strip() + " ".join(all_terms[replacement_index:])
         return result
 
     def detect(self, text: str, settings: Settings = Settings()) -> list[dict]:
         text = pad_symbols(text)
-        recs, _errs = self._match_verses_in_text(
-            text, settings.find_errors, settings.find_missing, settings.delimiters
-        )
+        recs, _errs = self._match_verses_in_text(text, settings.find_errors, settings.find_missing, settings.delimiters)
         result: list[dict] = []
         for v in recs:
             matches = recs[v]

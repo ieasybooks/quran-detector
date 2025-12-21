@@ -89,9 +89,7 @@ def load_bundled_data() -> QuranData:
         return QuranData(sura_names=sura_names, q_orig=q_orig, q_norm=q_norm, stops=stops)
 
 
-def load_data_from_paths(
-    quran_simple_path: str, quran_index_path: str, nonterminals_path: str
-) -> QuranData:
+def load_data_from_paths(quran_simple_path: str, quran_index_path: str, nonterminals_path: str) -> QuranData:
     sura_names = load_sura_names(quran_index_path)
     q_orig, q_norm = _build_verse_dicts(sura_names)
     load_quran_simple(quran_simple_path, sura_names, q_orig, q_norm)

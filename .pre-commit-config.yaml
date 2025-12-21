@@ -19,7 +19,7 @@ repos:
       - id: mypy
         name: Mypy
         args: [--config-file=pyproject.toml]
+        additional_dependencies: [pytest, python-Levenshtein]
 
 ci:
   autoupdate_schedule: weekly
-

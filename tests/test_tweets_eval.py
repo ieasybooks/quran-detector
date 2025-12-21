@@ -30,9 +30,7 @@ def _predict_counts(gold_path: Path, settings: Settings) -> dict[str, int]:
     return table
 
 
-def _score_like_paper(
-    gold: dict[str, int], pred: dict[str, int]
-) -> tuple[float, float, float, float]:
+def _score_like_paper(gold: dict[str, int], pred: dict[str, int]) -> tuple[float, float, float, float]:
     gold_total = sum(gold.values())
     pred_total = sum(pred.values())
 

@@ -154,6 +154,4 @@ def test_annotate_txt_against_golden(setting_name: str, settings: Settings, book
     assert actual != input_text
 
     for ref in expected_refs:
-        assert ref in actual, (
-            f"Missing reference {ref} in annotated output for book {book_num} ({setting_name})"
-        )
+        assert ref in actual, f"Missing reference {ref} in annotated output for book {book_num} ({setting_name})"

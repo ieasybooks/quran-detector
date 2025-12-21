@@ -1,18 +1,19 @@
 [project]
 name = "quran-detector"
-version = "0.0.0"
+version = "0.0.1"
 description = "Detect Quranic verses and verse fragments in Arabic text (QDetect rewrite)"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-  "python-Levenshtein>=0.25.1",
+  "python-Levenshtein>=0.25.1"
 ]
 
 [project.optional-dependencies]
 dev = [
-  "mypy>=1.13.0",
-  "pre-commit>=4.0.1",
+  "mypy>=1.19.1",
+  "pre-commit>=4.5.1",
   "ruff>=0.14.10",
+  "pytest>=9.0.2"
 ]
 
 [project.scripts]
@@ -35,7 +36,7 @@ quran_detector = ["data/*.txt", "data/*.xml"]
 testpaths = ["tests"]
 
 [tool.ruff]
-line-length = 100
+line-length = 120
 target-version = "py312"
 
 [tool.ruff.format]
@@ -48,17 +49,6 @@ select = ["I"]
 [tool.mypy]
 python_version = "3.12"
 files = ["src/quran_detector", "tests"]
-warn_return_any = false
-warn_unused_ignores = true
-no_implicit_optional = true
-show_error_codes = true
-pretty = true
-
-# Keep the initial migration practical: this project depends on some third-party
-# packages that don't ship full type information.
-ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = ["quran_detector.*"]
-disallow_untyped_defs = false
-check_untyped_defs = false
