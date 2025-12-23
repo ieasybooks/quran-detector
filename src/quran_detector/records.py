@@ -86,6 +86,8 @@ class MatchRecord:
         in_text_tokens = in_txt.split()
         if (len(orig_tokens) - self._get_extra_cnt(orig, extra_list)) > len(in_text_tokens):
             n_orig = norm_verses[surah_name][verse_number]
+            if len(in_text_tokens) < 2:
+                return orig
             start_idx = self._get_start_index(in_text_tokens[0], in_text_tokens[1], n_orig)
             if start_idx < 0:
                 # Preserve legacy fallback behavior but avoid noisy stdout in library usage.

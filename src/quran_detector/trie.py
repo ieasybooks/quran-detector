@@ -12,7 +12,7 @@ class VerseRef:
         return f"{self.name}:{self.number}"
 
     def __hash__(self) -> int:  # legacy-equivalent
-        return hash(self.name)
+        return hash((self.name, self.number))
 
 
 @dataclass
