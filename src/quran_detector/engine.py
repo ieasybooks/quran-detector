@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Callable
 from dataclasses import dataclass, field
 
@@ -498,10 +499,7 @@ class Engine:
     def annotate(self, text: str, settings: Settings = Settings()) -> str:
         text = pad_symbols(text)
         recs, _errs = self._match_verses_in_text(text, settings.find_errors, settings.find_missing, settings.delimiters)
-        seen: list[tuple[int, int]] = []
-        all_terms = text.split()
-        replacement_index = 0
-        result = ""
+        seen: set[tuple[int, int]] = set()
         replacement_recs: dict[int, MatchRecord] = {}
         replacement_texts: dict[int, str] = {}
 
@@ -512,17 +510,34 @@ class Engine:
                     continue
                 c_text = r.get_orig_str(self.q_orig, self.q_norm)
                 curr_loc = (r.start_in_text, r.end_in_text)
-                if curr_loc not in seen:
-                    replacement_recs[curr_loc[0]] = r
-                    replacement_texts[curr_loc[0]] = c_text
-                seen.append(curr_loc)
+                if curr_loc in seen:
+                    continue
+                replacement_recs[curr_loc[0]] = r
+                replacement_texts[curr_loc[0]] = c_text
+                seen.add(curr_loc)
 
-        for idx in sorted(replacement_recs):
-            r = replacement_recs[idx]
-            result = result + " ".join(all_terms[replacement_index : r.start_in_text]) + replacement_texts[idx] + " "
-            replacement_index = r.end_in_text
-        result = result.strip() + " ".join(all_terms[replacement_index:])
-        return result
+        # Preserve original whitespace/newlines: compute token character spans and replace by slicing.
+        token_spans = list(re.finditer(r"\S+", text))
+
+        replacements: list[tuple[int, int, str]] = []
+        for start_idx in sorted(replacement_recs):
+            r = replacement_recs[start_idx]
+            if not (0 <= r.start_in_text < r.end_in_text <= len(token_spans)):
+                continue
+            start_char = token_spans[r.start_in_text].start()
+            end_char = token_spans[r.end_in_text - 1].end()
+            replacements.append((start_char, end_char, replacement_texts[start_idx]))
+
+        out_parts: list[str] = []
+        prev = 0
+        for start_char, end_char, repl in replacements:
+            if start_char < prev:
+                continue
+            out_parts.append(text[prev:start_char])
+            out_parts.append(repl)
+            prev = end_char
+        out_parts.append(text[prev:])
+        return "".join(out_parts)
 
     def detect(self, text: str, settings: Settings = Settings()) -> list[dict]:
         text = pad_symbols(text)
