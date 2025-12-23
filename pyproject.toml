@@ -1,6 +1,6 @@
 [project]
 name = "quran-detector"
-version = "0.0.1"
+version = "0.0.2"
 description = "Detect Quranic verses and verse fragments in Arabic text (QDetect rewrite)"
 readme = "README.md"
 requires-python = ">=3.12"
