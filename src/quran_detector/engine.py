@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Callable
 from dataclasses import dataclass, field
 
 import Levenshtein
@@ -7,7 +8,7 @@ import Levenshtein
 from .config import Settings
 from .records import MatchRecord
 from .resources import QuranData, load_bundled_data, load_data_from_paths
-from .text import get_next_valid_term, normalize_term, pad_symbols
+from .text import normalize_term, pad_symbols
 from .trie import Node, VerseRef, add_verse
 
 
@@ -88,8 +89,9 @@ class Engine:
         wd_counter: int,
         find_err: bool,
         errors: list[list],
+        normalize_term_fn: Callable[[str], str],
     ) -> str:
-        term = normalize_term(raw_term, delims)
+        term = normalize_term_fn(raw_term)
         if len(term) < 1:
             return ""
         if (term not in curr) and find_err:
@@ -99,8 +101,22 @@ class Engine:
                 term = corrected
         return term
 
+    def _get_next_valid_term(
+        self, terms: list[str], i: int, normalize_term_fn: Callable[[str], str]
+    ) -> tuple[bool, str, int]:
+        length = len(terms)
+        while i < length:
+            normalized = normalize_term_fn(terms[i])
+            if len(normalized) > 1:
+                return True, normalized, i
+            i += 1
+        return False, "", i
+
     def _match_with_error(self, in_str: str, curr: dict[str, Node]) -> str | int:
+        target_len = len(in_str)
         for t in curr:
+            if abs(len(t) - target_len) > 1:
+                continue
             if Levenshtein.distance(in_str, t) == 1 and (t not in self.ambig):
                 return t
         return 0
@@ -112,26 +128,32 @@ class Engine:
         return 0
 
     def _match_detect_missing_verse(
-        self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
+        self,
+        terms: list[str],
+        curr: dict[str, Node],
+        start_idx: int,
+        delims: str,
+        find_err: bool,
+        normalize_term_fn: Callable[[str], str],
     ) -> tuple[set[VerseRef], str, list[list], int]:
         errors: list[list] = []
         errs: list[list] = []
         result: set[VerseRef] = set()
-        r_str = ""
+        r_parts: list[str] = []
         r_str_final = ""
         result_final: set[VerseRef] = set()
         wd_counter, end_idx = start_idx - 1, 0
 
         for t in terms[start_idx:]:
             wd_counter += 1
-            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors)
+            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors, normalize_term_fn)
             if not t:
                 continue
             if t in curr:
-                r_str = r_str + t + " "
+                r_parts.append(t)
                 result = curr[t].verses
                 if curr[t].terminal or curr[t].abs_terminal:
-                    r_str_final = r_str
+                    r_str_final = " ".join(r_parts) + " "
                     result_final = result
                     errs = errors
                     end_idx = wd_counter + 1
@@ -139,24 +161,26 @@ class Engine:
             else:
                 missing = self._find_in_children(t, curr)
                 if isinstance(missing, str):
-                    r_str = r_str + missing + " " + t + " "
+                    r_parts.extend([missing, t])
                     temp_cur = curr[missing].children
                     result = temp_cur[t].verses
                     errors.append([t, missing + " " + t, wd_counter])
-                    if len(r_str.split()) > self.min_len_build and (temp_cur[t].terminal or temp_cur[t].abs_terminal):
-                        r_str_final = r_str
+                    if len(r_parts) > self.min_len_build and (temp_cur[t].terminal or temp_cur[t].abs_terminal):
+                        r_str_final = " ".join(r_parts) + " "
                         result_final = result
                         errs = errors
                         end_idx = wd_counter + 1
                     curr = temp_cur[t].children
                 else:
-                    next_exists, next_term, indx = get_next_valid_term(terms, delims, wd_counter + 1)
+                    next_exists, next_term, indx = self._get_next_valid_term(
+                        terms, wd_counter + 1, normalize_term_fn
+                    )
                     if not next_exists:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
                     if isinstance(valid, str):
                         errors.append([t, valid, wd_counter])
-                        r_str = r_str + t + " "
+                        r_parts.append(t)
                         curr = curr[valid].children
                         end_idx = indx + 1
                     else:
@@ -164,26 +188,32 @@ class Engine:
         return result_final, r_str_final.strip(), errs, end_idx
 
     def _match_single_verse(
-        self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
+        self,
+        terms: list[str],
+        curr: dict[str, Node],
+        start_idx: int,
+        delims: str,
+        find_err: bool,
+        normalize_term_fn: Callable[[str], str],
     ) -> tuple[set[VerseRef], str, list[list], int]:
         errors: list[list] = []
         errs: list[list] = []
         result: set[VerseRef] = set()
-        r_str = ""
+        r_parts: list[str] = []
         r_str_final = ""
         result_final: set[VerseRef] = set()
         wd_counter, end_idx = start_idx - 1, 0
 
         for t in terms[start_idx:]:
             wd_counter += 1
-            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors)
+            t = self._normalize_and_correct(t, delims, curr, wd_counter, find_err, errors, normalize_term_fn)
             if not t:
                 continue
             if t in curr:
-                r_str = r_str + t + " "
+                r_parts.append(t)
                 result = curr[t].verses
                 if curr[t].terminal or curr[t].abs_terminal:
-                    r_str_final = r_str
+                    r_str_final = " ".join(r_parts) + " "
                     result_final = result
                     errs = errors
                     end_idx = wd_counter + 1
@@ -193,13 +223,19 @@ class Engine:
         return result_final, r_str_final.strip(), errs, end_idx
 
     def _match_long_verse(
-        self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
+        self,
+        terms: list[str],
+        curr: dict[str, Node],
+        start_idx: int,
+        delims: str,
+        find_err: bool,
+        normalize_term_fn: Callable[[str], str],
     ) -> tuple[set[VerseRef], str, list[list], int]:
         if not find_err:
-            return self._match_single_verse(terms, curr, start_idx, delims, find_err)
+            return self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
 
         term = terms[start_idx]
-        first = normalize_term(term, delims)
+        first = normalize_term_fn(term)
         e = "و" + first
         found = False
         rf2: set[VerseRef] = set()
@@ -210,17 +246,23 @@ class Engine:
         if first.startswith("و") and first[1:] in curr:
             found = True
         if len(terms[start_idx:]) > 0 and (e not in curr) and (not found):
-            return self._match_single_verse(terms, curr, start_idx, delims, find_err)
+            return self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
 
-        rf1, rs1, err1, end1 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
+        rf1, rs1, err1, end1 = self._match_single_verse(
+            terms, curr, start_idx, delims, find_err, normalize_term_fn
+        )
         if not found:
             terms[start_idx] = "و" + first
-            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
+            rf2, rs2, err2, end2 = self._match_single_verse(
+                terms, curr, start_idx, delims, find_err, normalize_term_fn
+            )
             err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
-            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err)
+            rf2, rs2, err2, end2 = self._match_single_verse(
+                terms, curr, start_idx, delims, find_err, normalize_term_fn
+            )
             err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
@@ -229,10 +271,16 @@ class Engine:
         return rf1, rs1, err1, end1
 
     def _match_long_verse_detect_missing(
-        self, terms: list[str], curr: dict[str, Node], start_idx: int, delims: str, find_err: bool
+        self,
+        terms: list[str],
+        curr: dict[str, Node],
+        start_idx: int,
+        delims: str,
+        find_err: bool,
+        normalize_term_fn: Callable[[str], str],
     ) -> tuple[set[VerseRef], str, list[list], int]:
         term = terms[start_idx]
-        first = normalize_term(term, delims)
+        first = normalize_term_fn(term)
         e = "و" + first
         found = False
         rf2: set[VerseRef] = set()
@@ -243,20 +291,26 @@ class Engine:
         if first.startswith("و") and first[1:] in curr:
             found = True
         if len(terms[start_idx:]) > 0 and (e not in curr) and (not found):
-            return self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
+            return self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
 
-        rf1, rs1, err1, end1 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
+        rf1, rs1, err1, end1 = self._match_detect_missing_verse(
+            terms, curr, start_idx, delims, find_err, normalize_term_fn
+        )
         if len(rs1.split()) == len(terms[start_idx:]):
             return rf1, rs1, err1, end1
 
         if not found:
             terms[start_idx] = "و" + first
-            rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
+            rf2, rs2, err2, end2 = self._match_detect_missing_verse(
+                terms, curr, start_idx, delims, find_err, normalize_term_fn
+            )
             err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
-            rf2, rs2, err2, end2 = self._match_detect_missing_verse(terms, curr, start_idx, delims, find_err)
+            rf2, rs2, err2, end2 = self._match_detect_missing_verse(
+                terms, curr, start_idx, delims, find_err, normalize_term_fn
+            )
             err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
@@ -321,12 +375,11 @@ class Engine:
                     if len(recs2) > 1:
                         cnt = 0
                         for r in recs2:
-                            # Preserve legacy behavior: idx_to_del is a str, r.aya_start is an int,
-                            # so this comparison is effectively always False (no deletion occurs).
-                            if r.aya_start == idx_to_del:
+                            # Normalize idx_to_del to int to allow proper pruning.
+                            if r.aya_start == int(idx_to_del):
                                 recs2.pop(cnt)
                                 break
-                            cnt = +1
+                            cnt += 1
 
             mem_aya.clear()
             mem_vs.clear()
@@ -348,10 +401,19 @@ class Engine:
         errs: list[list] = []
 
         terms = in_str.split()
+        term_cache: dict[str, str] = {}
+
+        def normalize_cached(raw_term: str) -> str:
+            if raw_term in term_cache:
+                return term_cache[raw_term]
+            normalized = normalize_term(raw_term, delims)
+            term_cache[raw_term] = normalized
+            return normalized
+
         i = 0
         while i < len(terms):
             end = -1
-            valid, t, i = get_next_valid_term(terms, delims, i)
+            valid, t, i = self._get_next_valid_term(terms, i, normalize_cached)
             if not valid:
                 return result, errs
             v = "و" + t
@@ -361,9 +423,13 @@ class Engine:
                 r_str = ""
                 er: list[list] = []
                 if find_missing:
-                    r, r_str, er, end = self._match_long_verse_detect_missing(terms, self.trie, i, delims, find_err)
+                    r, r_str, er, end = self._match_long_verse_detect_missing(
+                        terms, self.trie, i, delims, find_err, normalize_cached
+                    )
                 else:
-                    r, r_str, er, end = self._match_long_verse(terms, self.trie, i, delims, find_err)
+                    r, r_str, er, end = self._match_long_verse(
+                        terms, self.trie, i, delims, find_err, normalize_cached
+                    )
                 if len(r) == 0:
                     mem_aya = []
                     mem_vs = []
@@ -371,7 +437,7 @@ class Engine:
                     i = i + 1
                     continue
 
-                errs = errs + er
+                errs.extend(er)
                 curr_ayat = [x.name for x in r]
                 overlap = sorted(set(curr_ayat).intersection(set(mem_aya)))
                 found = False
