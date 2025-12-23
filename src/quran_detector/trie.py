@@ -12,7 +12,9 @@ class VerseRef:
         return f"{self.name}:{self.number}"
 
     def __hash__(self) -> int:  # legacy-equivalent
-        return hash((self.name, self.number))
+        # Preserve legacy behavior: hash by surah name only. This intentionally causes
+        # collisions across verse numbers and influences set behavior/order.
+        return hash(self.name)
 
 
 @dataclass

@@ -172,9 +172,7 @@ class Engine:
                         end_idx = wd_counter + 1
                     curr = temp_cur[t].children
                 else:
-                    next_exists, next_term, indx = self._get_next_valid_term(
-                        terms, wd_counter + 1, normalize_term_fn
-                    )
+                    next_exists, next_term, indx = self._get_next_valid_term(terms, wd_counter + 1, normalize_term_fn)
                     if not next_exists:
                         return result_final, r_str_final.strip(), errs, end_idx
                     valid = self._find_in_children(next_term, curr)
@@ -248,21 +246,15 @@ class Engine:
         if len(terms[start_idx:]) > 0 and (e not in curr) and (not found):
             return self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
 
-        rf1, rs1, err1, end1 = self._match_single_verse(
-            terms, curr, start_idx, delims, find_err, normalize_term_fn
-        )
+        rf1, rs1, err1, end1 = self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
         if not found:
             terms[start_idx] = "و" + first
-            rf2, rs2, err2, end2 = self._match_single_verse(
-                terms, curr, start_idx, delims, find_err, normalize_term_fn
-            )
+            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
             err2.append([first, terms[start_idx], start_idx])
             terms[start_idx] = term
         else:
             terms[start_idx] = first[1:]
-            rf2, rs2, err2, end2 = self._match_single_verse(
-                terms, curr, start_idx, delims, find_err, normalize_term_fn
-            )
+            rf2, rs2, err2, end2 = self._match_single_verse(terms, curr, start_idx, delims, find_err, normalize_term_fn)
             err2.append([first, first[1:], start_idx])
             terms[start_idx] = term
 
@@ -375,11 +367,12 @@ class Engine:
                     if len(recs2) > 1:
                         cnt = 0
                         for r in recs2:
-                            # Normalize idx_to_del to int to allow proper pruning.
-                            if r.aya_start == int(idx_to_del):
+                            # Preserve legacy behavior: idx_to_del is a str, r.aya_start is an int,
+                            # so this comparison is effectively always False (no deletion occurs).
+                            if r.aya_start == idx_to_del:  # type: ignore[comparison-overlap]
                                 recs2.pop(cnt)
                                 break
-                            cnt += 1
+                            cnt = +1
 
             mem_aya.clear()
             mem_vs.clear()
@@ -427,9 +420,7 @@ class Engine:
                         terms, self.trie, i, delims, find_err, normalize_cached
                     )
                 else:
-                    r, r_str, er, end = self._match_long_verse(
-                        terms, self.trie, i, delims, find_err, normalize_cached
-                    )
+                    r, r_str, er, end = self._match_long_verse(terms, self.trie, i, delims, find_err, normalize_cached)
                 if len(r) == 0:
                     mem_aya = []
                     mem_vs = []
