@@ -133,6 +133,7 @@ class MatchRecord:
                 norm_verses,
             )
             + '"'
+            + " "
             + end_str
         )
         return out
